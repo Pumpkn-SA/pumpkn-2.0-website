@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator Design Options</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: { brand: { primary: '#5B8FA0', dark: '#2C3A40', accent: '#78B648', light: '#F2F6F5', secondary: '#84ADA4', gray: '#58595B', surface: '#F7FAF9' } },
+        fontFamily: { heading: ['Lora','Georgia','serif'], body: ['Lato','sans-serif'] }
+      }}
+    }
+  </script>
+  <style>
+    :root { --accent: #78B648; --dark: #2C3A40; --primary: #5B8FA0; --secondary: #84ADA4; }
+    body { font-family: 'Lato', sans-serif; }
+    h1,h2,h3,h4 { font-family: 'Lora', Georgia, serif; }
+    .heading-accent { font-family: 'Lora', serif; font-style: italic; color: var(--primary); }
+    .surface-gradient-dark { background: linear-gradient(160deg, #2C3A40 0%, #1a2a30 50%, #1e3028 100%); }
+    .glass { background: rgba(255,255,255,0.06); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); }
+    input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+    input[type=number] { -moz-appearance: textfield; }
+  </style>
+</head>
+<body class="bg-white antialiased text-brand-gray">
+
+  <div class="max-w-7xl mx-auto px-6 py-12">
+    <h1 class="font-heading text-3xl text-brand-dark mb-2">Calculator Design Options</h1>
+    <p class="text-brand-gray/50 mb-16 text-[15px]">Three layouts. Each is fully functional.</p>
+  </div>
+
+  <!-- ═══════════ OPTION A — Single Card with Slider ═══════════ -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <p class="text-[12px] font-bold uppercase tracking-[0.15em] text-brand-accent mb-3">Option A — Single Card with Range Slider</p>
+      <p class="text-[14px] text-brand-gray/40 mb-10">One unified card. Slider for amount, pill buttons for duration, output below.</p>
+
+      <div class="max-w-xl mx-auto">
+        <div class="bg-white rounded-2xl border border-brand-gray/8 shadow-sm p-8">
+          <div class="text-center mb-6">
+            <p class="text-[10px] uppercase tracking-[0.14em] text-brand-primary font-bold mb-1">Loan Amount</p>
+            <p class="font-heading text-[36px] text-brand-dark" id="a-display">R30,000</p>
+          </div>
+          <input type="range" id="a-range" min="30000" max="1000000" step="5000" value="30000" class="w-full h-2 bg-brand-gray/8 rounded-full appearance-none cursor-pointer mb-1" style="accent-color: #78B648;">
+          <div class="flex justify-between text-[11px] text-brand-gray/30 mb-6">
+            <span>R30K</span><span>R1M</span>
+          </div>
+
+          <div class="flex gap-2 mb-6">
+            <button class="a-dur flex-1 py-2.5 text-[13px] font-semibold rounded-full bg-brand-dark text-white" data-m="1">1 month</button>
+            <button class="a-dur flex-1 py-2.5 text-[13px] font-semibold rounded-full border border-brand-dark/10 text-brand-dark" data-m="2">2 months</button>
+            <button class="a-dur flex-1 py-2.5 text-[13px] font-semibold rounded-full border border-brand-dark/10 text-brand-dark" data-m="3">3 months</button>
+          </div>
+
+          <div class="border-t border-brand-gray/6 pt-6 grid grid-cols-3 gap-4 text-center">
+            <div>
+              <p class="text-[10px] uppercase tracking-[0.12em] text-brand-gray/35 font-semibold mb-1">Weekly</p>
+              <p class="text-[18px] font-bold text-brand-dark" id="a-weekly">R0</p>
+            </div>
+            <div class="border-x border-brand-gray/6">
+              <p class="text-[10px] uppercase tracking-[0.12em] text-brand-gray/35 font-semibold mb-1">Interest</p>
+              <p class="text-[18px] font-bold text-brand-primary" id="a-interest">R0</p>
+            </div>
+            <div>
+              <p class="text-[10px] uppercase tracking-[0.12em] text-brand-gray/35 font-semibold mb-1">Total</p>
+              <p class="text-[18px] font-bold text-brand-accent" id="a-total">R0</p>
+            </div>
+          </div>
+
+          <button class="w-full mt-6 py-3 text-[14px] font-semibold text-white bg-brand-accent rounded-full hover:bg-brand-accent/90 transition">
+            Check If You Qualify &rarr;
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ OPTION B — Horizontal Split with Visual ═══════════ -->
+  <section class="py-16 bg-brand-surface">
+    <div class="max-w-7xl mx-auto px-6">
+      <p class="text-[12px] font-bold uppercase tracking-[0.15em] text-brand-accent mb-3">Option B — Horizontal with Donut Chart</p>
+      <p class="text-[14px] text-brand-gray/40 mb-10">Side-by-side: inputs left, visual breakdown right with a proportional donut.</p>
+
+      <div class="max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <!-- Inputs -->
+        <div class="bg-white rounded-2xl border border-brand-gray/8 p-7">
+          <h3 class="font-heading text-lg text-brand-dark mb-5">Configure your loan</h3>
+          <div class="mb-5">
+            <label class="block text-[11px] font-bold uppercase tracking-[0.12em] text-brand-gray/50 mb-2">Amount</label>
+            <div class="relative">
+              <span class="absolute left-4 top-1/2 -translate-y-1/2 text-brand-gray/30 text-[14px] font-semibold">R</span>
+              <input type="number" id="b-amount" value="150000" min="30000" max="1000000" class="w-full pl-8 pr-4 py-3 text-[15px] font-bold text-brand-dark bg-brand-surface border border-brand-gray/10 rounded-xl focus:outline-none focus:border-brand-primary/40 transition">
+            </div>
+          </div>
+          <div class="mb-5">
+            <label class="block text-[11px] font-bold uppercase tracking-[0.12em] text-brand-gray/50 mb-2">Duration</label>
+            <div class="flex gap-2">
+              <button class="b-dur flex-1 py-2.5 text-[13px] font-semibold rounded-full bg-brand-dark text-white" data-m="1">1 mo</button>
+              <button class="b-dur flex-1 py-2.5 text-[13px] font-semibold rounded-full border border-brand-dark/10 text-brand-dark" data-m="2">2 mo</button>
+              <button class="b-dur flex-1 py-2.5 text-[13px] font-semibold rounded-full border border-brand-dark/10 text-brand-dark" data-m="3">3 mo</button>
+            </div>
+          </div>
+          <div>
+            <label class="block text-[11px] font-bold uppercase tracking-[0.12em] text-brand-gray/50 mb-2">Frequency</label>
+            <select id="b-freq" class="w-full px-4 py-3 text-[14px] text-brand-dark bg-brand-surface border border-brand-gray/10 rounded-xl focus:outline-none focus:border-brand-primary/40 transition appearance-none">
+              <option value="weekly">Weekly</option>
+              <option value="bi-weekly">Bi-weekly</option>
+              <option value="daily">Daily</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Visual output -->
+        <div class="bg-white rounded-2xl border border-brand-gray/8 p-7 flex flex-col items-center justify-center">
+          <!-- Donut -->
+          <div class="relative w-40 h-40 mb-6">
+            <svg class="w-full h-full -rotate-90" viewBox="0 0 120 120">
+              <circle cx="60" cy="60" r="52" fill="none" stroke="#F2F6F5" stroke-width="12"/>
+              <circle id="b-donut-principal" cx="60" cy="60" r="52" fill="none" stroke="#2C3A40" stroke-width="12" stroke-dasharray="326.73" stroke-dashoffset="50" stroke-linecap="round" style="transition: stroke-dashoffset 0.5s ease;"/>
+              <circle id="b-donut-interest" cx="60" cy="60" r="52" fill="none" stroke="#78B648" stroke-width="12" stroke-dasharray="326.73" stroke-dashoffset="280" stroke-linecap="round" style="transition: stroke-dashoffset 0.5s ease;"/>
+            </svg>
+            <div class="absolute inset-0 flex flex-col items-center justify-center">
+              <p class="text-[10px] text-brand-gray/35 uppercase font-semibold">Total</p>
+              <p class="text-[20px] font-bold text-brand-dark" id="b-total-center">R0</p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-3 gap-4 w-full text-center">
+            <div>
+              <div class="flex items-center justify-center gap-1.5 mb-1">
+                <div class="w-2.5 h-2.5 rounded-full bg-brand-dark"></div>
+                <span class="text-[10px] text-brand-gray/35 uppercase font-semibold">Principal</span>
+              </div>
+              <p class="text-[15px] font-bold text-brand-dark" id="b-principal">R0</p>
+            </div>
+            <div>
+              <div class="flex items-center justify-center gap-1.5 mb-1">
+                <div class="w-2.5 h-2.5 rounded-full bg-brand-accent"></div>
+                <span class="text-[10px] text-brand-gray/35 uppercase font-semibold">Interest</span>
+              </div>
+              <p class="text-[15px] font-bold text-brand-accent" id="b-interest">R0</p>
+            </div>
+            <div>
+              <div class="flex items-center justify-center gap-1.5 mb-1">
+                <div class="w-2.5 h-2.5 rounded-full bg-brand-primary"></div>
+                <span class="text-[10px] text-brand-gray/35 uppercase font-semibold">Per week</span>
+              </div>
+              <p class="text-[15px] font-bold text-brand-primary" id="b-weekly">R0</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ OPTION C — Dark Glass Compact ═══════════ -->
+  <section class="py-16 surface-gradient-dark">
+    <div class="max-w-7xl mx-auto px-6">
+      <p class="text-[12px] font-bold uppercase tracking-[0.15em] text-brand-accent mb-3">Option C — Dark Glass Compact</p>
+      <p class="text-[14px] text-white/30 mb-10">Single dark card with glass inputs. Outputs as highlighted stat blocks.</p>
+
+      <div class="max-w-2xl mx-auto">
+        <div class="glass rounded-2xl p-8">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+            <div>
+              <label class="block text-[10px] font-bold uppercase tracking-[0.12em] text-white/30 mb-2">Amount</label>
+              <div class="relative">
+                <span class="absolute left-3 top-1/2 -translate-y-1/2 text-white/30 text-[13px]">R</span>
+                <input type="number" id="c-amount" value="150000" min="30000" max="1000000" class="w-full pl-7 pr-3 py-3 text-[14px] font-bold text-white bg-white/8 border border-white/10 rounded-xl focus:outline-none focus:border-brand-primary/40 transition">
+              </div>
+            </div>
+            <div>
+              <label class="block text-[10px] font-bold uppercase tracking-[0.12em] text-white/30 mb-2">Duration</label>
+              <div class="flex gap-1.5">
+                <button class="c-dur flex-1 py-3 text-[13px] font-semibold rounded-xl bg-white text-brand-dark" data-m="1">1m</button>
+                <button class="c-dur flex-1 py-3 text-[13px] font-semibold rounded-xl bg-white/8 text-white/50 border border-white/10" data-m="2">2m</button>
+                <button class="c-dur flex-1 py-3 text-[13px] font-semibold rounded-xl bg-white/8 text-white/50 border border-white/10" data-m="3">3m</button>
+              </div>
+            </div>
+            <div>
+              <label class="block text-[10px] font-bold uppercase tracking-[0.12em] text-white/30 mb-2">Frequency</label>
+              <select id="c-freq" class="w-full px-3 py-3 text-[13px] font-semibold text-white bg-white/8 border border-white/10 rounded-xl focus:outline-none focus:border-brand-primary/40 transition appearance-none">
+                <option value="weekly">Weekly</option>
+                <option value="bi-weekly">Bi-weekly</option>
+                <option value="daily">Daily</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-3 gap-3">
+            <div class="bg-white/8 rounded-xl p-4 text-center border border-white/5">
+              <p class="text-[9px] uppercase tracking-[0.12em] text-white/25 font-semibold mb-1" id="c-label">Weekly</p>
+              <p class="font-heading text-[22px] text-white" id="c-weekly">R0</p>
+            </div>
+            <div class="bg-brand-accent/15 rounded-xl p-4 text-center border border-brand-accent/20">
+              <p class="text-[9px] uppercase tracking-[0.12em] text-brand-accent/60 font-semibold mb-1">Interest</p>
+              <p class="font-heading text-[22px] text-brand-accent" id="c-interest">R0</p>
+            </div>
+            <div class="bg-white/8 rounded-xl p-4 text-center border border-white/5">
+              <p class="text-[9px] uppercase tracking-[0.12em] text-white/25 font-semibold mb-1">Total</p>
+              <p class="font-heading text-[22px] text-white" id="c-total">R0</p>
+            </div>
+          </div>
+
+          <button class="w-full mt-6 py-3 text-[13px] font-semibold text-white bg-brand-accent rounded-full hover:bg-brand-accent/90 transition">
+            Check If You Qualify &rarr;
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="h-20"></div>
+
+  <script>
+    const RATE = 0.002;
+
+    function calc(principal, months, freq) {
+      let installments, days;
+      switch(freq) {
+        case 'daily': installments = months * 30; days = 1; break;
+        case 'weekly': installments = months * 4; days = 7; break;
+        case 'bi-weekly': installments = months * 2; days = 14; break;
+        default: installments = months * 4; days = 7;
+      }
+      const r = RATE * days;
+      const f = Math.pow(1+r, installments);
+      const emi = principal * r * f / (f - 1);
+      let bal = principal, ti = 0;
+      for (let i = 0; i < installments; i++) { const int = bal * r; ti += int; bal -= (emi - int); }
+      return { emi, total: emi * installments, interest: ti, installments, fee: principal * 0.02 };
+    }
+
+    function fmt(n) { return 'R' + Math.round(n).toLocaleString('en-ZA'); }
+
+    // Option A
+    (function() {
+      let months = 1;
+      const range = document.getElementById('a-range');
+      const display = document.getElementById('a-display');
+
+      function update() {
+        const p = parseInt(range.value);
+        display.textContent = fmt(p);
+        const r = calc(p, months, 'weekly');
+        document.getElementById('a-weekly').textContent = fmt(r.emi);
+        document.getElementById('a-interest').textContent = fmt(r.interest);
+        document.getElementById('a-total').textContent = fmt(r.total + r.fee);
+      }
+
+      range.addEventListener('input', update);
+      document.querySelectorAll('.a-dur').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.a-dur').forEach(b => { b.className = 'a-dur flex-1 py-2.5 text-[13px] font-semibold rounded-full border border-brand-dark/10 text-brand-dark'; });
+          btn.className = 'a-dur flex-1 py-2.5 text-[13px] font-semibold rounded-full bg-brand-dark text-white';
+          months = parseInt(btn.dataset.m);
+          update();
+        });
+      });
+      update();
+    })();
+
+    // Option B
+    (function() {
+      let months = 1;
+      const amountInput = document.getElementById('b-amount');
+      const freqSelect = document.getElementById('b-freq');
+      const CIRC = 2 * Math.PI * 52;
+
+      function update() {
+        const p = parseInt(amountInput.value) || 0;
+        const freq = freqSelect.value;
+        const r = calc(p, months, freq);
+
+        document.getElementById('b-principal').textContent = fmt(p);
+        document.getElementById('b-interest').textContent = fmt(r.interest);
+        document.getElementById('b-weekly').textContent = fmt(r.emi);
+        document.getElementById('b-total-center').textContent = fmt(r.total + r.fee);
+
+        // Donut
+        const total = p + r.interest;
+        if (total > 0) {
+          const pRatio = p / total;
+          const iRatio = r.interest / total;
+          document.getElementById('b-donut-principal').setAttribute('stroke-dashoffset', CIRC * (1 - pRatio));
+          document.getElementById('b-donut-interest').setAttribute('stroke-dashoffset', CIRC * (1 - iRatio));
+        }
+
+        const label = freq === 'daily' ? 'Per day' : freq === 'bi-weekly' ? 'Bi-weekly' : 'Per week';
+        document.querySelector('#b-weekly').parentElement.querySelector('.text-brand-gray\\/35').textContent = label.toUpperCase();
+      }
+
+      amountInput.addEventListener('input', update);
+      freqSelect.addEventListener('change', update);
+      document.querySelectorAll('.b-dur').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.b-dur').forEach(b => { b.className = 'b-dur flex-1 py-2.5 text-[13px] font-semibold rounded-full border border-brand-dark/10 text-brand-dark'; });
+          btn.className = 'b-dur flex-1 py-2.5 text-[13px] font-semibold rounded-full bg-brand-dark text-white';
+          months = parseInt(btn.dataset.m);
+          update();
+        });
+      });
+      update();
+    })();
+
+    // Option C
+    (function() {
+      let months = 1;
+      const amountInput = document.getElementById('c-amount');
+      const freqSelect = document.getElementById('c-freq');
+
+      function update() {
+        const p = parseInt(amountInput.value) || 0;
+        const freq = freqSelect.value;
+        const r = calc(p, months, freq);
+
+        document.getElementById('c-weekly').textContent = fmt(r.emi);
+        document.getElementById('c-interest').textContent = fmt(r.interest);
+        document.getElementById('c-total').textContent = fmt(r.total + r.fee);
+        document.getElementById('c-label').textContent = freq === 'daily' ? 'Daily' : freq === 'bi-weekly' ? 'Bi-weekly' : 'Weekly';
+      }
+
+      amountInput.addEventListener('input', update);
+      freqSelect.addEventListener('change', update);
+      document.querySelectorAll('.c-dur').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.c-dur').forEach(b => { b.className = 'c-dur flex-1 py-3 text-[13px] font-semibold rounded-xl bg-white/8 text-white/50 border border-white/10'; });
+          btn.className = 'c-dur flex-1 py-3 text-[13px] font-semibold rounded-xl bg-white text-brand-dark';
+          months = parseInt(btn.dataset.m);
+          update();
+        });
+      });
+      update();
+    })();
+  </script>
+</body>
+</html>

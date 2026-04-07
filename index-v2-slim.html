@@ -1,0 +1,2142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agriculture Business Loans South Africa | Pumpkn</title>
+  <meta name="description" content="Need reliable funding? We provide quick loans and capital tailored for Agriculture businesses in South Africa. Grow your business with Pumpkn. Apply now!">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+  <link href="./images/6876191b7d74b10df8a39472_32x32.png" rel="shortcut icon" type="image/x-icon">
+  <link href="./images/6876191b7d74b10df8a39473_256x256.png" rel="apple-touch-icon">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              primary:   '#5B8FA0',
+              dark:      '#2C3A40',
+              accent:    '#78B648',
+              light:     '#F2F6F5',
+              secondary: '#84ADA4',
+              gray:      '#58595B',
+              surface:   '#F7FAF9',
+            }
+          },
+          fontFamily: {
+            heading: ['Lora', 'Georgia', 'serif'],
+            body:    ['Lato', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root {
+      --primary:    #5B8FA0;
+      --dark:       #2C3A40;
+      --accent:     #78B648;
+      --light:      #F2F6F5;
+      --secondary:  #84ADA4;
+      --gray:       #58595B;
+      --surface:    #F7FAF9;
+      --r:          8px;
+      --primary-rgb: 91, 143, 160;
+      --dark-rgb:    44, 58, 64;
+      --accent-rgb:  120, 182, 72;
+    }
+
+    * { box-sizing: border-box; }
+    body { font-family: 'Lato', -apple-system, sans-serif; color: var(--gray); }
+    h1, h2, h3, h4 { font-family: 'Lora', Georgia, serif; }
+
+    .btn {
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn:active { transform: translateY(0); }
+
+    .surface-gradient-dark {
+      background: linear-gradient(160deg, #2C3A40 0%, #1a2a30 50%, #1e3028 100%);
+    }
+    .surface-gradient-primary {
+      background: linear-gradient(160deg, #5B8FA0 0%, #4a7a8a 50%, #3d6d7a 100%);
+    }
+    .surface-gradient-accent {
+      background: linear-gradient(160deg, #2C3A40 0%, #2a3f35 60%, #304a38 100%);
+    }
+
+    .card-hover {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .card-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.04);
+    }
+
+    .glass {
+      background: rgba(255,255,255,0.06);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .glass:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.18);
+    }
+
+    .heading-accent {
+      font-family: 'Lora', Georgia, serif;
+      font-style: italic;
+      color: var(--primary);
+    }
+
+    .photo-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 16px;
+    }
+    .photo-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(44,58,64,0.85) 0%, transparent 60%);
+      transition: opacity 0.3s;
+    }
+    .photo-card-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 24px;
+      z-index: 2;
+    }
+
+    /* FAQ accordion */
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    .faq-item.open .faq-answer { max-height: 500px; }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+    .faq-chevron { transition: transform 0.3s ease; }
+
+    /* Calculator styles */
+    .calc-duration-btn {
+      padding: 10px 16px;
+      border: 1.5px solid rgba(91,143,160,0.2);
+      border-radius: 999px;
+      background: transparent;
+      color: var(--dark);
+      cursor: pointer;
+      font-family: 'Lato', sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      text-align: center;
+      transition: all 0.25s ease;
+    }
+    .calc-duration-btn:hover {
+      border-color: rgba(91,143,160,0.4);
+      background: rgba(91,143,160,0.05);
+    }
+    .calc-duration-btn.active {
+      background: var(--dark);
+      color: #fff;
+      border-color: var(--dark);
+    }
+
+    .calc-select {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1.5px solid rgba(88,89,91,0.1);
+      border-radius: 12px;
+      background: #fff;
+      font-family: 'Lato', sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--dark);
+      appearance: none;
+      transition: all 0.25s;
+    }
+    .calc-select:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(91,143,160,0.12);
+      outline: none;
+    }
+
+    .calc-input {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1.5px solid rgba(88,89,91,0.1);
+      border-radius: 12px;
+      background: #fff;
+      font-family: 'Lato', sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      color: var(--dark);
+      transition: all 0.25s;
+    }
+    .calc-input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(91,143,160,0.12);
+      outline: none;
+    }
+    .calc-input::-webkit-outer-spin-button,
+    .calc-input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    .calc-input { -moz-appearance: textfield; }
+
+    /* Product tab */
+    .product-tab {
+      transition: all 0.25s ease;
+      border: 1.5px solid transparent;
+      cursor: pointer;
+    }
+    .product-tab:hover {
+      border-color: rgba(91,143,160,0.3);
+      background: rgba(91,143,160,0.05);
+    }
+    .product-tab.active {
+      background: var(--dark);
+      color: #fff;
+      border-color: var(--dark);
+    }
+
+    /* Smooth scroll */
+    html { scroll-behavior: smooth; }
+
+    /* Navbar scroll behavior */
+    .navbar-v2 {
+      transition: all 0.3s ease;
+    }
+    .navbar-v2.scrolled {
+      margin-top: 0;
+    }
+    .navbar-v2.scrolled > div:first-child {
+      margin-top: 0;
+    }
+    .navbar-v2.scrolled > div:first-child > div:first-child {
+      border-radius: 0 0 24px 24px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    /* Scroll reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.6s cubic-bezier(0.4,0,0.2,1), transform 0.6s cubic-bezier(0.4,0,0.2,1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Qualification check bounce */
+    .check-pop {
+      opacity: 0;
+      transform: scale(0.5);
+      transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    .check-pop.visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* Hero badge pop-in */
+    .badge-pop {
+      opacity: 0;
+      transform: scale(0.9) translateY(8px);
+      transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    .badge-pop.visible {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+
+    /* Funding ladder pill fill */
+    .ladder-pill {
+      opacity: 0.4;
+      transform: scale(0.95);
+      transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.34,1.56,0.64,1), background-color 0.5s ease;
+    }
+    .ladder-pill.visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideDown {
+      from { opacity: 1; transform: translateY(0); }
+      to { opacity: 0; transform: translateY(20px); }
+    }
+
+    @keyframes popIn {
+      from { transform: scale(0); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    /* Newsletter glow pulse */
+    @keyframes glowPulse {
+      0% { box-shadow: 0 0 0 0 rgba(120,182,72,0.3); }
+      50% { box-shadow: 0 0 0 8px rgba(120,182,72,0); }
+      100% { box-shadow: 0 0 0 0 rgba(120,182,72,0); }
+    }
+    .newsletter-glow:focus {
+      animation: glowPulse 1s ease-out;
+    }
+
+    /* FAQ open bg shift */
+    .faq-item.open {
+      background-color: #fff;
+      border-color: rgba(91,143,160,0.15);
+    }
+
+    @media (max-width: 768px) {
+      .hero-title-v2 { font-size: 36px !important; }
+      #chatbot-window { width: 85vw !important; right: 1rem !important; }
+      #chatbot-messages { max-height: 280px !important; min-height: 200px !important; }
+    }
+    @media (max-width: 480px) {
+      .hero-title-v2 { font-size: 28px !important; }
+    }
+  </style>
+</head>
+<body class="bg-white antialiased">
+
+  <!-- ══════════════════════════ NAVBAR ══════════════════════════ -->
+  <nav class="navbar-v2 fixed top-0 left-0 right-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 mt-4">
+      <div class="bg-white rounded-full px-8 py-4 flex items-center justify-between shadow-lg shadow-black/5">
+        <a href="/" class="flex items-center gap-2">
+          <img src="./images/68af30aeb4914acc8c36dec8_cropped_pumpkn_logo_2-removebg-preview.png" alt="Pumpkn" class="h-12">
+        </a>
+        <div class="hidden md:flex items-center gap-8">
+          <a href="/" class="text-[15px] font-semibold text-brand-dark/70 hover:text-brand-dark transition">Home</a>
+          <a href="/info-hub/case-studies" class="text-[15px] font-semibold text-brand-dark/70 hover:text-brand-dark transition">Growth Stories</a>
+          <a href="/about-us/why-we-are" class="text-[15px] font-semibold text-brand-dark/70 hover:text-brand-dark transition">About Us</a>
+          <div class="relative group">
+            <button class="text-[15px] font-semibold text-brand-dark/70 hover:text-brand-dark transition flex items-center gap-1">
+              Knowledge Hub
+              <svg class="w-3 h-3 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="absolute top-full left-0 mt-3 bg-white rounded-xl shadow-lg border border-brand-gray/6 py-2 min-w-[160px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+              <a href="/about-us/why-we-are" class="block px-4 py-2 text-[13px] text-brand-gray hover:bg-brand-light transition">About Us</a>
+              <a href="/info-hub/articles" class="block px-4 py-2 text-[13px] text-brand-gray hover:bg-brand-light transition">Articles</a>
+              <a href="/info-hub/careers" class="block px-4 py-2 text-[13px] text-brand-gray hover:bg-brand-light transition">Careers</a>
+              <a href="/info-hub/faqs" class="block px-4 py-2 text-[13px] text-brand-gray hover:bg-brand-light transition">FAQs</a>
+            </div>
+          </div>
+          <a href="/contact-us" class="text-[15px] font-semibold text-brand-dark/70 hover:text-brand-dark transition">Contact Us</a>
+        </div>
+        <a href="https://wa.me/27766489542" target="_blank" class="hidden md:inline-flex btn items-center gap-2 px-7 py-2.5 bg-brand-dark text-white text-[15px] font-semibold rounded-full hover:bg-brand-dark/90 hover:shadow-lg hover:shadow-brand-dark/10">
+          Apply Now <span class="opacity-50 text-[11px]">&rarr;</span>
+        </a>
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" class="md:hidden flex flex-col gap-1.5">
+          <span class="w-5 h-0.5 bg-brand-dark rounded"></span>
+          <span class="w-5 h-0.5 bg-brand-dark rounded"></span>
+          <span class="w-5 h-0.5 bg-brand-dark rounded"></span>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden mx-4 mt-2">
+      <div class="bg-white rounded-2xl shadow-lg px-6 py-4">
+        <a href="/" class="block py-2 text-[14px] font-medium text-brand-dark">Home</a>
+        <a href="/info-hub/case-studies" class="block py-2 text-[14px] font-medium text-brand-dark">Growth Stories</a>
+        <a href="/about-us/why-we-are" class="block py-2 text-[14px] font-medium text-brand-dark">About Us</a>
+        <a href="/info-hub/articles" class="block py-2 text-[14px] font-medium text-brand-dark">Articles</a>
+        <a href="/info-hub/careers" class="block py-2 text-[14px] font-medium text-brand-dark">Careers</a>
+        <a href="/info-hub/faqs" class="block py-2 text-[14px] font-medium text-brand-dark">FAQs</a>
+        <a href="/contact-us" class="block py-2 text-[14px] font-medium text-brand-dark">Contact Us</a>
+        <a href="https://wa.me/27766489542" target="_blank" class="btn mt-2 inline-flex items-center gap-2 px-6 py-2.5 bg-brand-dark text-white text-[13px] font-semibold rounded-full w-full justify-center">Apply Now &rarr;</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════ HERO ══════════════════════════ -->
+  <section id="hero" class="surface-gradient-dark text-white min-h-screen relative overflow-hidden flex items-center">
+    <div class="absolute -top-20 -right-20 w-96 h-96 rounded-full bg-brand-primary/5 blur-3xl"></div>
+    <div class="absolute -bottom-32 -left-20 w-64 h-64 md:w-[500px] md:h-[500px] rounded-full bg-brand-accent/5 blur-3xl"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 w-full">
+      <div class="grid grid-cols-1 lg:grid-cols-[55%_40%] gap-[5%] items-center pt-8">
+        <!-- Left: text -->
+        <div>
+          <h1 class="hero-title-v2 text-[52px] font-normal tracking-tight leading-[1.1] mb-6">
+            Fast, simple <span class="heading-accent" style="color: #b8e89a;">business funding</span> for agri & food
+          </h1>
+          <p class="text-[17px] text-white/45 leading-relaxed mb-4">FROM R30,000 UPWARDS</p>
+          <p class="text-[15px] text-white/40 leading-relaxed max-w-lg mb-10">Unlock growth, take on bigger contracts and expand with ease. Pumpkn's funding ladder offers fast, flexible finance for agriculture and food businesses - built to grow with you.</p>
+          <div class="flex flex-wrap gap-3 mb-12">
+            <a href="https://wa.me/27766489542" target="_blank" class="btn inline-flex items-center gap-2.5 px-8 py-3.5 bg-brand-accent text-white text-[15px] font-semibold rounded-full hover:bg-brand-accent/90 hover:shadow-xl hover:shadow-brand-accent/25">
+              Apply Now <span class="opacity-60 text-sm">&rarr;</span>
+            </a>
+            <a href="#how-it-works" class="btn inline-flex items-center gap-2 px-7 py-3.5 bg-transparent text-white text-[15px] font-semibold rounded-full border-[1.5px] border-white/15 hover:border-white/30 hover:bg-white/5">
+              Learn More
+            </a>
+          </div>
+          <!-- Hero badges -->
+          <div class="flex flex-col sm:flex-row gap-3">
+            <div class="glass rounded-xl px-4 py-2.5 flex items-center gap-3">
+              <img src="./images/ncr-logo.png" alt="NCR" class="h-7 brightness-0 invert opacity-80">
+              <div>
+                <p class="text-[12px] font-semibold text-white">NCR Registered</p>
+                <p class="text-[10px] text-white/35">NCRCP18413</p>
+              </div>
+            </div>
+            <div class="glass rounded-xl px-4 py-2.5 flex items-center gap-2.5">
+              <div class="w-8 h-8 rounded-lg bg-brand-accent/15 flex items-center justify-center flex-shrink-0">
+                <svg class="w-4 h-4 text-brand-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/></svg>
+              </div>
+              <div>
+                <p class="text-[12px] font-semibold text-white">170+ SMEs</p>
+                <p class="text-[10px] text-white/35">Funded</p>
+              </div>
+            </div>
+            <div class="glass rounded-xl px-4 py-2.5 flex items-center gap-2.5">
+              <div class="w-8 h-8 rounded-lg bg-brand-primary/15 flex items-center justify-center flex-shrink-0">
+                <svg class="w-4 h-4 text-brand-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
+              </div>
+              <div>
+                <p class="text-[12px] font-semibold text-white">Rapid Access</p>
+                <p class="text-[10px] text-white/35">Within 24h</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: AI Chat Animation (Glass Style) -->
+        <div class="hidden lg:flex justify-center">
+          <div class="glass rounded-2xl w-full overflow-hidden flex flex-col" style="min-height: 300px; height: auto; max-height: 430px;">
+            <!-- Header -->
+            <div class="flex items-center gap-2.5 px-4 py-3 border-b border-white/8 flex-shrink-0">
+              <div class="w-8 h-8 rounded-full bg-brand-accent/20 flex items-center justify-center">
+                <svg class="w-4 h-4 text-brand-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/></svg>
+              </div>
+              <div>
+                <p class="text-[12px] font-semibold text-white">Pumpkn AI</p>
+                <p class="text-[9px] text-white/30">Your Funding Partner</p>
+              </div>
+            </div>
+            <!-- Messages -->
+            <div id="hero-chat" class="flex-1 px-3 py-3 space-y-2 overflow-hidden"></div>
+            <!-- Input -->
+            <div class="px-3 py-2.5 border-t border-white/8 flex items-center gap-2 flex-shrink-0">
+              <div class="flex-1 bg-white/5 border border-white/8 rounded-full px-3 py-1.5 text-[11px] text-white/20">Type a message...</div>
+              <div class="w-7 h-7 rounded-full bg-brand-accent flex items-center justify-center">
+                <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"/></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════ AS SEEN ON ══════════════════════════ -->
+  <div class="bg-white border-b border-brand-gray/6 py-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center">
+      <p class="text-[10px] font-semibold uppercase tracking-[0.15em] text-brand-gray/30 mb-5">As Seen On</p>
+      <div class="flex flex-wrap items-center justify-center gap-8 opacity-60">
+        <img src="./images/688106a6866cda68446735d2_Screenshot 2025-07-23 173821.png" alt="" class="h-12 object-contain grayscale hover:grayscale-0 transition">
+        <img src="./images/688106a4866cda6844673440_Screenshot 2025-07-23 174440.png" alt="" class="h-12 object-contain grayscale hover:grayscale-0 transition">
+        <img src="./images/688106a5dd1578cd7f558e18_Screenshot 2025-07-23 173901.png" alt="" class="h-12 object-contain grayscale hover:grayscale-0 transition">
+        <img src="./images/688106a445ec75dca8b7f892_Screenshot 2025-07-23 173954.png" alt="" class="h-12 object-contain grayscale hover:grayscale-0 transition">
+        <img src="./images/688106a4cc7d61279e1f7ef5_Screenshot 2025-07-23 174401.png" alt="" class="h-12 object-contain grayscale hover:grayscale-0 transition">
+        <img src="./images/688106a4229d822ed2f21c44_Screenshot 2025-07-23 174455.png" alt="" class="h-12 object-contain grayscale hover:grayscale-0 transition">
+        <img src="./images/688106a4baca4ac9672febe9_Screenshot 2025-07-23 174236.png" alt="" class="h-12 object-contain grayscale hover:grayscale-0 transition">
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════ 3 STEPS ══════════════════════════ -->
+  <section id="how-it-works" class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-14">
+        <div class="flex items-center justify-center gap-4 mb-3">
+          <div class="w-6 h-px bg-brand-primary"></div>
+          <span class="text-[10px] font-semibold uppercase tracking-[0.15em] text-brand-primary">How It Works</span>
+          <div class="w-6 h-px bg-brand-primary"></div>
+        </div>
+        <h2 class="font-heading text-[32px] font-normal text-brand-dark leading-tight">Get started in three <span class="heading-accent">simple steps</span></h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="steps-cards">
+        <!-- Step 1: Apply -->
+        <div class="card-hover rounded-2xl border border-brand-primary/10 border-t-[3px] border-t-brand-primary bg-brand-primary/[0.03] overflow-hidden">
+          <div class="p-6 pb-4">
+            <div class="text-[10px] uppercase tracking-[0.14em] text-brand-primary font-bold mb-2">Step 1</div>
+            <h3 class="font-heading text-lg font-medium text-brand-dark mb-2">Apply Online</h3>
+            <p class="text-[14px] text-brand-gray/50 leading-relaxed">Complete your application in under 10 minutes.</p>
+          </div>
+          <div class="mx-4 mb-4 bg-brand-surface rounded-xl border border-brand-gray/6 overflow-hidden">
+            <div class="flex items-center gap-1.5 px-3 py-2 border-b border-brand-gray/6">
+              <div class="w-2 h-2 rounded-full bg-red-300"></div>
+              <div class="w-2 h-2 rounded-full bg-yellow-300"></div>
+              <div class="w-2 h-2 rounded-full bg-green-300"></div>
+              <span class="text-[9px] text-brand-gray/30 ml-2">pumpkn.io/apply</span>
+            </div>
+            <div class="p-3 space-y-2">
+              <div>
+                <div class="text-[8px] uppercase text-brand-gray/30 font-semibold mb-1">Business Name</div>
+                <div class="h-7 bg-white border border-brand-gray/10 rounded-lg px-2 flex items-center">
+                  <span class="step-type text-[11px] text-brand-dark font-medium" style="display: inline-block;"></span>
+                  <span class="step-cursor animate-pulse text-brand-primary text-[11px]">|</span>
+                </div>
+              </div>
+              <div>
+                <div class="text-[8px] uppercase text-brand-gray/30 font-semibold mb-1">Funding Amount</div>
+                <div class="h-7 bg-white border border-brand-gray/10 rounded-lg px-2 flex items-center">
+                  <span class="step-amount text-[11px] text-brand-dark font-medium"></span>
+                </div>
+              </div>
+              <div>
+                <div class="text-[8px] uppercase text-brand-gray/30 font-semibold mb-1">Documents</div>
+                <div class="flex gap-1.5">
+                  <div class="step-doc h-7 flex-1 bg-brand-accent/8 border border-brand-accent/15 rounded-lg flex items-center justify-center opacity-0 transition-opacity duration-500">
+                    <svg class="w-3 h-3 text-brand-accent" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                    <span class="text-[8px] text-brand-accent font-semibold ml-0.5">ID</span>
+                  </div>
+                  <div class="step-doc h-7 flex-1 bg-brand-accent/8 border border-brand-accent/15 rounded-lg flex items-center justify-center opacity-0 transition-opacity duration-500">
+                    <svg class="w-3 h-3 text-brand-accent" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                    <span class="text-[8px] text-brand-accent font-semibold ml-0.5">CIPC</span>
+                  </div>
+                  <div class="step-doc h-7 flex-1 bg-brand-accent/8 border border-brand-accent/15 rounded-lg flex items-center justify-center opacity-0 transition-opacity duration-500">
+                    <svg class="w-3 h-3 text-brand-accent" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                    <span class="text-[8px] text-brand-accent font-semibold ml-0.5">Bank</span>
+                  </div>
+                </div>
+              </div>
+              <div class="step-submit bg-brand-dark text-white text-[10px] font-semibold text-center py-1.5 rounded-lg opacity-0 transition-all duration-500">Submit Application &rarr;</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2: Receive Offer -->
+        <div class="card-hover rounded-2xl border border-brand-accent/10 border-t-[3px] border-t-brand-accent bg-brand-accent/[0.03] overflow-hidden">
+          <div class="p-6 pb-4">
+            <div class="text-[10px] uppercase tracking-[0.14em] text-brand-accent font-bold mb-2">Step 2</div>
+            <h3 class="font-heading text-lg font-medium text-brand-dark mb-2">Receive an Offer</h3>
+            <p class="text-[14px] text-brand-gray/50 leading-relaxed">Get a fast decision with transparent terms.</p>
+          </div>
+          <div class="mx-4 mb-4 bg-brand-surface rounded-xl border border-brand-gray/6 overflow-hidden">
+            <div class="flex items-center gap-1.5 px-3 py-2 border-b border-brand-gray/6">
+              <div class="w-2 h-2 rounded-full bg-red-300"></div>
+              <div class="w-2 h-2 rounded-full bg-yellow-300"></div>
+              <div class="w-2 h-2 rounded-full bg-green-300"></div>
+              <span class="text-[9px] text-brand-gray/30 ml-2">pumpkn.io/offer</span>
+            </div>
+            <div class="p-3">
+              <div class="step-offer flex items-center gap-2 mb-2 opacity-0" style="transition: all 0.5s ease;">
+                <div class="w-6 h-6 rounded-full bg-brand-accent flex items-center justify-center flex-shrink-0">
+                  <svg class="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <span class="text-[11px] font-bold text-brand-dark">Application Approved!</span>
+              </div>
+              <div class="step-offer space-y-1.5 opacity-0" style="transition: all 0.5s ease;">
+                <div class="flex justify-between bg-white rounded-lg px-2.5 py-1.5 border border-brand-gray/6">
+                  <span class="text-[10px] text-brand-gray/40">Amount</span>
+                  <span class="text-[11px] font-bold text-brand-dark">R250,000</span>
+                </div>
+                <div class="flex justify-between bg-white rounded-lg px-2.5 py-1.5 border border-brand-gray/6">
+                  <span class="text-[10px] text-brand-gray/40">Term</span>
+                  <span class="text-[11px] font-bold text-brand-dark">3 months</span>
+                </div>
+                <div class="flex justify-between bg-white rounded-lg px-2.5 py-1.5 border border-brand-gray/6">
+                  <span class="text-[10px] text-brand-gray/40">Rate</span>
+                  <span class="text-[11px] font-bold text-brand-dark">0.2% daily</span>
+                </div>
+              </div>
+              <div class="step-offer mt-2 bg-brand-accent text-white text-[10px] font-semibold text-center py-1.5 rounded-lg opacity-0" style="transition: all 0.5s ease;">Accept Offer &rarr;</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3: Funds Paid -->
+        <div class="card-hover rounded-2xl border border-brand-secondary/10 border-t-[3px] border-t-brand-secondary bg-brand-secondary/[0.03] overflow-hidden">
+          <div class="p-6 pb-4">
+            <div class="text-[10px] uppercase tracking-[0.14em] text-brand-secondary font-bold mb-2">Step 3</div>
+            <h3 class="font-heading text-lg font-medium text-brand-dark mb-2">Funds Paid to Suppliers</h3>
+            <p class="text-[14px] text-brand-gray/50 leading-relaxed">We pay your suppliers directly per invoice.</p>
+          </div>
+          <div class="mx-4 mb-4 bg-brand-surface rounded-xl border border-brand-gray/6 overflow-hidden">
+            <div class="flex items-center gap-1.5 px-3 py-2 border-b border-brand-gray/6">
+              <div class="w-2 h-2 rounded-full bg-red-300"></div>
+              <div class="w-2 h-2 rounded-full bg-yellow-300"></div>
+              <div class="w-2 h-2 rounded-full bg-green-300"></div>
+              <span class="text-[9px] text-brand-gray/30 ml-2">pumpkn.io/disbursement</span>
+            </div>
+            <div class="p-3 space-y-1.5">
+              <div class="step-inv flex items-center gap-2 bg-white rounded-lg px-2.5 py-2 border border-brand-gray/6 opacity-0" style="transition: all 0.4s ease;">
+                <div class="w-5 h-5 rounded bg-brand-accent/10 flex items-center justify-center flex-shrink-0">
+                  <svg class="w-3 h-3 text-brand-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                </div>
+                <div class="flex-1"><p class="text-[10px] font-semibold text-brand-dark">INV-001 — Fresh Produce Co.</p><p class="text-[9px] text-brand-gray/30">R85,000</p></div>
+                <span class="text-[8px] font-bold text-brand-accent bg-brand-accent/10 px-1.5 py-0.5 rounded-full">Paid</span>
+              </div>
+              <div class="step-inv flex items-center gap-2 bg-white rounded-lg px-2.5 py-2 border border-brand-gray/6 opacity-0" style="transition: all 0.4s ease;">
+                <div class="w-5 h-5 rounded bg-brand-accent/10 flex items-center justify-center flex-shrink-0">
+                  <svg class="w-3 h-3 text-brand-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                </div>
+                <div class="flex-1"><p class="text-[10px] font-semibold text-brand-dark">INV-002 — AgriSupply Ltd</p><p class="text-[9px] text-brand-gray/30">R120,000</p></div>
+                <span class="text-[8px] font-bold text-brand-accent bg-brand-accent/10 px-1.5 py-0.5 rounded-full">Paid</span>
+              </div>
+              <div class="step-inv flex items-center gap-2 bg-white rounded-lg px-2.5 py-2 border border-brand-gray/6 opacity-0" style="transition: all 0.4s ease;">
+                <div class="w-5 h-5 rounded bg-brand-primary/10 flex items-center justify-center flex-shrink-0">
+                  <svg class="w-3 h-3 text-brand-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2"/><circle cx="12" cy="12" r="10"/></svg>
+                </div>
+                <div class="flex-1"><p class="text-[10px] font-semibold text-brand-dark">INV-003 — PackTech SA</p><p class="text-[9px] text-brand-gray/30">R45,000</p></div>
+                <span class="text-[8px] font-bold text-brand-primary bg-brand-primary/10 px-1.5 py-0.5 rounded-full">Processing</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-10">
+        <a href="https://wa.me/27766489542" target="_blank" class="btn inline-flex items-center gap-2 px-8 py-3.5 bg-brand-dark text-white text-sm font-semibold rounded-full hover:bg-brand-dark/90 hover:shadow-lg hover:shadow-brand-dark/10">
+          Get Started <span class="opacity-50 text-xs">&rarr;</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ QUALIFICATION ══════════════════════════ -->
+  <section class="bg-brand-surface py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="flex items-center gap-4 mb-3">
+            <div class="w-6 h-px bg-brand-primary"></div>
+            <span class="text-[10px] font-semibold uppercase tracking-[0.15em] text-brand-primary">Eligibility</span>
+          </div>
+          <h2 class="font-heading text-[28px] font-normal text-brand-dark leading-tight mb-4">Check if you <span class="heading-accent">qualify</span> for an SME loan</h2>
+          <p class="text-[15px] text-brand-gray/50 leading-relaxed mb-8">We keep eligibility simple. If your agri or food-processing business meets the basics below, you can apply online in minutes and get a quick decision.</p>
+
+          <div class="space-y-4 mb-8">
+            <div class="flex items-start gap-3">
+              <div class="check-pop w-5 h-5 rounded-full bg-brand-accent/15 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-3 h-3 text-brand-accent" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              </div>
+              <p class="text-[15px] text-brand-dark font-medium">Agricultural, food, retail or related business</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="check-pop w-5 h-5 rounded-full bg-brand-accent/15 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-3 h-3 text-brand-accent" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              </div>
+              <p class="text-[15px] text-brand-dark font-medium">Registered with CIPC (no sole proprietorship)</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="check-pop w-5 h-5 rounded-full bg-brand-accent/15 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-3 h-3 text-brand-accent" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              </div>
+              <p class="text-[15px] text-brand-dark font-medium">A director of the business</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="check-pop w-5 h-5 rounded-full bg-brand-accent/15 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-3 h-3 text-brand-accent" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              </div>
+              <p class="text-[15px] text-brand-dark font-medium">Business in trade for at least 12 months</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="check-pop w-5 h-5 rounded-full bg-brand-accent/15 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-3 h-3 text-brand-accent" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              </div>
+              <p class="text-[15px] text-brand-dark font-medium">Monthly turnover of at least R85,000 (or R1 million per year)</p>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap gap-3">
+            <a href="https://wa.me/27766489542" target="_blank" class="btn inline-flex items-center gap-2 px-7 py-3 bg-brand-dark text-white text-sm font-semibold rounded-full hover:bg-brand-dark/90 hover:shadow-lg">
+              Apply Now <span class="opacity-50 text-xs">&rarr;</span>
+            </a>
+            <a href="/contact-us" class="btn inline-flex items-center gap-2 px-7 py-3 bg-transparent text-brand-dark text-sm font-semibold rounded-full border-[1.5px] border-brand-dark/15 hover:border-brand-dark/30">
+              Chat To Us
+            </a>
+          </div>
+        </div>
+
+        <div class="flex justify-center">
+          <img src="./images/689bb754cf53b6e333f6af64_female-shopkeeper-smiling-camera 1.png" alt="SME business owner" class="rounded-2xl max-w-full shadow-lg shadow-brand-dark/5">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ LOAN CALCULATOR ══════════════════════════ -->
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-12">
+        <div class="flex items-center justify-center gap-4 mb-3">
+          <div class="w-6 h-px bg-brand-primary"></div>
+          <span class="text-[10px] font-semibold uppercase tracking-[0.15em] text-brand-primary">Calculator</span>
+          <div class="w-6 h-px bg-brand-primary"></div>
+        </div>
+        <h2 class="font-heading text-[28px] font-normal text-brand-dark leading-tight mb-2">SME Loan <span class="heading-accent">Calculator</span></h2>
+        <p class="text-[15px] text-brand-gray/50 max-w-xl mx-auto">Estimate your repayments and total interest with our easy-to-use loan calculator.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-4xl mx-auto" id="v2-calc-container">
+        <!-- Input column -->
+        <div class="bg-white rounded-2xl p-8 border border-brand-gray/6">
+          <div class="mb-6">
+            <label class="block text-[12px] font-bold uppercase tracking-[0.12em] text-brand-gray/50 mb-3">Loan Amount</label>
+            <input type="number" id="v2-loanAmount" min="30000" max="1000000" step="1000" value="30000" class="calc-input">
+            <div id="v2-loanAmountError" class="hidden text-red-500 text-xs mt-2">Funding starts from R30,000</div>
+            <div class="flex justify-between text-[11px] text-brand-gray/30 mt-2">
+              <span>R30,000</span>
+              <span>R1,000,000</span>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <label class="block text-[12px] font-bold uppercase tracking-[0.12em] text-brand-gray/50 mb-3">Loan Duration</label>
+            <div class="flex gap-2">
+              <button class="calc-duration-btn active flex-1" data-months="1">1 month</button>
+              <button class="calc-duration-btn flex-1" data-months="2">2</button>
+              <button class="calc-duration-btn flex-1" data-months="3">3</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-[12px] font-bold uppercase tracking-[0.12em] text-brand-gray/50 mb-3">Repayment Frequency</label>
+            <select id="v2-frequency" class="calc-select">
+              <option value="daily">Daily</option>
+              <option value="weekly" selected>Weekly</option>
+              <option value="bi-weekly">Bi-weekly</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Output column -->
+        <div class="bg-white rounded-2xl p-8 border border-brand-gray/6">
+          <div class="space-y-4">
+            <div class="bg-brand-surface rounded-xl p-5 border border-brand-gray/6">
+              <p class="text-[11px] uppercase tracking-[0.12em] text-brand-gray/40 font-semibold mb-1">Interest Charge</p>
+              <p class="font-heading text-2xl font-medium text-brand-dark" id="v2-interest">R0</p>
+            </div>
+
+            <div class="bg-brand-surface rounded-xl p-5 border border-brand-accent/15 border-t-[3px] border-t-brand-accent">
+              <p class="text-[11px] uppercase tracking-[0.12em] text-brand-gray/40 font-semibold mb-1" id="v2-installmentLabel">Weekly Repayment</p>
+              <p class="font-heading text-2xl font-medium text-brand-dark" id="v2-installmentAmount">R0</p>
+            </div>
+
+            <div class="bg-brand-surface rounded-xl p-5 border border-brand-gray/6">
+              <p class="text-[11px] uppercase tracking-[0.12em] text-brand-gray/40 font-semibold mb-1">Total Repayment</p>
+              <p class="font-heading text-2xl font-medium text-brand-dark" id="v2-totalRepayment">R0</p>
+              <p class="text-[11px] text-brand-gray/35 mt-1" id="v2-totalRepaymentSubtext">Over 0 installments</p>
+            </div>
+
+            <div class="bg-brand-light rounded-lg p-4">
+              <p class="text-[10px] uppercase tracking-[0.12em] text-brand-gray/40 font-semibold mb-1">Service Fee</p>
+              <p class="text-[16px] font-semibold text-brand-dark" id="v2-serviceFee">R0</p>
+              <p class="text-[10px] text-brand-gray/35 mt-1">*2% of loan amount, charged once for first-time clients.</p>
+            </div>
+
+            <p class="text-[11px] text-brand-gray/35 text-center mt-2"><strong>Important</strong>: This is an indicative quote, final terms may vary based on the credit assessment.</p>
+
+            <button id="calc-cta-btn" class="btn w-full mt-5 inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-brand-accent text-white text-[14px] font-semibold rounded-full hover:bg-brand-accent/90 hover:shadow-lg hover:shadow-brand-accent/20">
+              Check If You Qualify — It's Free <span class="opacity-60">&rarr;</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Calculator CTA Modal -->
+  <div id="calc-modal" class="fixed inset-0 z-[9999] hidden items-center justify-center" style="background: rgba(0,0,0,0.5); backdrop-filter: blur(4px);">
+    <div class="bg-white rounded-2xl w-full max-w-md mx-4 overflow-hidden shadow-2xl">
+      <!-- Recap step -->
+      <div id="calc-modal-recap" class="p-8">
+        <div class="flex items-center justify-between mb-5">
+          <h3 class="font-heading text-xl font-medium text-brand-dark">Your Loan Estimate</h3>
+          <button id="calc-modal-close" class="w-8 h-8 rounded-full bg-brand-gray/5 flex items-center justify-center hover:bg-brand-gray/10 transition">
+            <svg class="w-4 h-4 text-brand-gray/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+
+        <div class="bg-brand-surface rounded-xl p-5 border border-brand-gray/6 space-y-3 mb-6">
+          <div class="flex justify-between">
+            <span class="text-[13px] text-brand-gray/40">Loan Amount</span>
+            <span class="text-[14px] font-bold text-brand-dark" id="calc-recap-amount"></span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-[13px] text-brand-gray/40">Duration</span>
+            <span class="text-[14px] font-bold text-brand-dark" id="calc-recap-duration"></span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-[13px] text-brand-gray/40">Repayment</span>
+            <span class="text-[14px] font-bold text-brand-dark" id="calc-recap-repayment"></span>
+          </div>
+          <div class="border-t border-brand-gray/6 pt-3 flex justify-between">
+            <span class="text-[13px] text-brand-gray/40">Total Repayment</span>
+            <span class="text-[15px] font-bold text-brand-accent" id="calc-recap-total"></span>
+          </div>
+        </div>
+
+        <div class="bg-brand-accent/6 border border-brand-accent/12 rounded-xl px-5 py-4 mb-6">
+          <div class="flex items-start gap-3">
+            <div class="w-8 h-8 rounded-full bg-brand-accent/15 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-4 h-4 text-brand-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/></svg>
+            </div>
+            <div>
+              <p class="text-[14px] font-semibold text-brand-dark mb-1">Want to find out if you qualify?</p>
+              <p class="text-[13px] text-brand-gray/50 leading-relaxed">Chat with our Pumpkn AI advisor — it's free, takes 5 minutes, and there's no obligation.</p>
+            </div>
+          </div>
+        </div>
+
+        <a href="https://wa.me/27766489542" target="_blank" class="btn w-full inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-brand-dark text-white text-[14px] font-semibold rounded-full hover:bg-brand-dark/90 hover:shadow-lg">
+          Chat with Pumpkn AI <span class="opacity-50">&rarr;</span>
+        </a>
+        <p class="text-[11px] text-brand-gray/30 text-center mt-3">Free eligibility check. No commitment required.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════ TESTIMONIALS ══════════════════════════ -->
+  <section class="bg-brand-surface py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-12">
+        <div class="flex items-center justify-center gap-4 mb-3">
+          <div class="w-6 h-px bg-brand-accent"></div>
+          <span class="text-[10px] font-semibold uppercase tracking-[0.15em] text-brand-accent">Growth Stories</span>
+          <div class="w-6 h-px bg-brand-accent"></div>
+        </div>
+        <h2 class="font-heading text-[28px] font-normal text-brand-dark leading-tight">What our <span class="heading-accent" style="color: var(--accent);">clients</span> say</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <!-- Testimonial 1 -->
+        <div class="card-hover bg-white rounded-2xl p-7 border border-brand-gray/6 relative">
+          <div class="text-brand-primary/8 text-5xl font-heading leading-none absolute top-4 right-6">&ldquo;</div>
+          <div class="flex gap-0.5 mb-4">
+            <svg class="w-4 h-4 text-brand-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-brand-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-brand-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-brand-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-brand-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+          <p class="font-heading text-[15px] text-brand-dark italic leading-relaxed mb-5 relative z-10">"Pumpkn understood our challenges immediately. Their support didn't just help us survive — it put us in a position to scale with confidence."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-gradient-to-br from-brand-accent/20 to-brand-secondary/20 flex items-center justify-center text-brand-accent text-[11px] font-bold">F</div>
+            <div>
+              <p class="text-[13px] font-semibold text-brand-dark">Forage</p>
+              <p class="text-[11px] text-brand-gray/40">Fresh Produce</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="card-hover bg-white rounded-2xl p-7 border border-brand-gray/6 relative">
+          <div class="text-brand-primary/8 text-5xl font-heading leading-none absolute top-4 right-6">&ldquo;</div>
+          <div class="flex gap-0.5 mb-4">
+            <svg class="w-4 h-4 text-brand-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-brand-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-brand-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-brand-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-brand-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+          <p class="font-heading text-[15px] text-brand-dark italic leading-relaxed mb-5 relative z-10">"I would gladly recommend Pumpkn as a first choice for any business seeking funding. They listened to our needs and helped us every step of the way."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-gradient-to-br from-brand-primary/20 to-brand-accent/20 flex items-center justify-center text-brand-primary text-[11px] font-bold">M</div>
+            <div>
+              <p class="text-[13px] font-semibold text-brand-dark">Meela's Delights</p>
+              <p class="text-[11px] text-brand-gray/40">Food Production</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="card-hover bg-white rounded-2xl p-7 border border-brand-gray/6 relative">
+          <div class="text-brand-primary/8 text-5xl font-heading leading-none absolute top-4 right-6">&ldquo;</div>
+          <div class="flex gap-0.5 mb-4">
+            <svg class="w-4 h-4 text-brand-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-brand-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-brand-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-brand-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-brand-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+          <p class="font-heading text-[15px] text-brand-dark italic leading-relaxed mb-5 relative z-10">"I most definitely recommend Pumpkn to other SMEs. They're reliable, fast, and once they understand your needs, they make you feel like a priority."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-gradient-to-br from-brand-secondary/20 to-brand-primary/20 flex items-center justify-center text-brand-secondary text-[11px] font-bold">E</div>
+            <div>
+              <p class="text-[13px] font-semibold text-brand-dark">Exotic Taste</p>
+              <p class="text-[11px] text-brand-gray/40">Food Production</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-10">
+        <a href="/info-hub/case-studies" class="btn inline-flex items-center gap-2 px-7 py-3 bg-transparent text-brand-dark text-sm font-semibold rounded-full border-[1.5px] border-brand-dark/15 hover:border-brand-dark/30">
+          View All Stories <span class="opacity-50 text-xs">&rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ FAQ ══════════════════════════ -->
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-12">
+        <div class="flex items-center justify-center gap-4 mb-3">
+          <div class="w-6 h-px bg-brand-primary"></div>
+          <span class="text-[10px] font-semibold uppercase tracking-[0.15em] text-brand-primary">FAQ</span>
+          <div class="w-6 h-px bg-brand-primary"></div>
+        </div>
+        <h2 class="font-heading text-[28px] font-normal text-brand-dark leading-tight">Business funding <span class="heading-accent">FAQ</span></h2>
+        <p class="text-[15px] text-brand-gray/45 mt-2">Answers for South African SMEs</p>
+      </div>
+
+      <div class="space-y-3" id="faq-list">
+        <div class="faq-item bg-white rounded-xl border border-brand-gray/8 shadow-sm overflow-hidden">
+          <button class="w-full flex items-center justify-between p-5 text-left" onclick="this.parentElement.classList.toggle('open')">
+            <span class="text-[15px] font-semibold text-brand-dark pr-4">Who qualifies for a Pumpkn loan?</span>
+            <svg class="faq-chevron w-4 h-4 text-brand-gray/30 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p class="px-5 pb-5 text-[15px] text-brand-gray/50 leading-relaxed">To qualify, your business must be CIPC-registered, have a business bank account, and have traded for at least 1 year (food businesses) or 3 years (agri businesses). You'll also need a minimum annual turnover of R1m.</p>
+          </div>
+        </div>
+
+        <div class="faq-item bg-white rounded-xl border border-brand-gray/8 shadow-sm overflow-hidden">
+          <button class="w-full flex items-center justify-between p-5 text-left" onclick="this.parentElement.classList.toggle('open')">
+            <span class="text-[15px] font-semibold text-brand-dark pr-4">What documents do I need to apply?</span>
+            <svg class="faq-chevron w-4 h-4 text-brand-gray/30 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p class="px-5 pb-5 text-[15px] text-brand-gray/50 leading-relaxed">We'll need a copy of the business owner's ID, your CIPC registration document, and 6 months of recent business bank statements. You'll also complete our quick onboarding form to get started.</p>
+          </div>
+        </div>
+
+        <div class="faq-item bg-white rounded-xl border border-brand-gray/8 shadow-sm overflow-hidden">
+          <button class="w-full flex items-center justify-between p-5 text-left" onclick="this.parentElement.classList.toggle('open')">
+            <span class="text-[15px] font-semibold text-brand-dark pr-4">What can Pumpkn loans be used for?</span>
+            <svg class="faq-chevron w-4 h-4 text-brand-gray/30 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p class="px-5 pb-5 text-[15px] text-brand-gray/50 leading-relaxed">Our loans are designed to help established agri and food businesses manage cash flow and support growth. They can be used for working capital, stock purchases, or day-to-day expenses.</p>
+          </div>
+        </div>
+
+        <div class="faq-item bg-white rounded-xl border border-brand-gray/8 shadow-sm overflow-hidden">
+          <button class="w-full flex items-center justify-between p-5 text-left" onclick="this.parentElement.classList.toggle('open')">
+            <span class="text-[15px] font-semibold text-brand-dark pr-4">Do you fund startups, grants, or long-term purchases?</span>
+            <svg class="faq-chevron w-4 h-4 text-brand-gray/30 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p class="px-5 pb-5 text-[15px] text-brand-gray/50 leading-relaxed">Unfortunately not at this stage - we don't fund startups, offer grants, or finance long-term purchases like land or motor vehicles. Our loans are strictly commercial and carry standard fees.</p>
+          </div>
+        </div>
+
+        <div class="faq-item bg-white rounded-xl border border-brand-gray/8 shadow-sm overflow-hidden">
+          <button class="w-full flex items-center justify-between p-5 text-left" onclick="this.parentElement.classList.toggle('open')">
+            <span class="text-[15px] font-semibold text-brand-dark pr-4">How quickly can I access funding once I apply?</span>
+            <svg class="faq-chevron w-4 h-4 text-brand-gray/30 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p class="px-5 pb-5 text-[15px] text-brand-gray/50 leading-relaxed">Once we've received your documents and completed our review, approved businesses can typically access funding within a few business days.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-8">
+        <a href="/info-hub/faqs" class="btn inline-flex items-center gap-2 px-7 py-3 bg-brand-dark text-white text-sm font-semibold rounded-full hover:bg-brand-dark/90 hover:shadow-lg">
+          View More <span class="opacity-50 text-xs">&rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ FINANCING PRODUCTS + FUNDING LADDER ══════════════════════════ -->
+  <section class="bg-brand-surface py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-6">
+        <div class="flex items-center justify-center gap-4 mb-3">
+          <div class="w-6 h-px bg-brand-primary"></div>
+          <span class="text-[10px] font-semibold uppercase tracking-[0.15em] text-brand-primary">Funding Ladder</span>
+          <div class="w-6 h-px bg-brand-primary"></div>
+        </div>
+        <h2 class="font-heading text-[32px] font-normal text-brand-dark leading-tight">Funding that <span class="heading-accent">grows</span> with your business</h2>
+        <p class="text-[15px] text-brand-gray/45 mt-3 max-w-2xl mx-auto">Start small, prove your potential, and unlock bigger capital. Our funding ladder scales with you — from R20K supplier financing to R5M contract fulfillment.</p>
+      </div>
+
+      <!-- Funding ladder steps -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-14 max-w-3xl mx-auto">
+        <div class="ladder-pill bg-brand-accent/8 border border-brand-accent/15 rounded-2xl px-5 py-5 text-center">
+          <div class="w-10 h-10 rounded-full bg-brand-accent flex items-center justify-center mx-auto mb-3">
+            <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.63 8.41m6 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.58-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/></svg>
+          </div>
+          <h4 class="text-[15px] font-bold text-brand-dark mb-1">Begin</h4>
+          <p class="text-[13px] text-brand-gray/45 leading-relaxed">Access your first loan with fast approval and full support.</p>
+        </div>
+        <div class="ladder-pill bg-brand-primary/8 border border-brand-primary/15 rounded-2xl px-5 py-5 text-center">
+          <div class="w-10 h-10 rounded-full bg-brand-primary flex items-center justify-center mx-auto mb-3">
+            <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+          </div>
+          <h4 class="text-[15px] font-bold text-brand-dark mb-1">Prove</h4>
+          <p class="text-[13px] text-brand-gray/45 leading-relaxed">Repay on time and unlock more capital with longer terms.</p>
+        </div>
+        <div class="ladder-pill bg-brand-secondary/8 border border-brand-secondary/15 rounded-2xl px-5 py-5 text-center">
+          <div class="w-10 h-10 rounded-full bg-brand-secondary flex items-center justify-center mx-auto mb-3">
+            <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15"/></svg>
+          </div>
+          <h4 class="text-[15px] font-bold text-brand-dark mb-1">Expand</h4>
+          <p class="text-[13px] text-brand-gray/45 leading-relaxed">Unlock larger funding for expansion, productivity and resilience.</p>
+        </div>
+      </div>
+
+      <!-- Product tabs -->
+      <div class="flex flex-wrap justify-center gap-2 mb-10" id="product-tabs">
+        <button class="product-tab active px-5 py-2.5 rounded-full text-[13px] font-medium" data-tab="supplier">Short on Cash?</button>
+        <button class="product-tab px-5 py-2.5 rounded-full text-[13px] font-medium text-brand-dark" data-tab="contract">Landing a Big Contract?</button>
+        <button class="product-tab px-5 py-2.5 rounded-full text-[13px] font-medium text-brand-dark" data-tab="invoice">Waiting on Invoice Payments?</button>
+        <button class="product-tab px-5 py-2.5 rounded-full text-[13px] font-medium text-brand-dark" data-tab="asset">Ready to Expand?</button>
+      </div>
+
+      <!-- Tab content -->
+      <div class="max-w-2xl mx-auto">
+        <div id="tab-supplier" class="tab-content">
+          <div class="card-hover bg-white rounded-2xl p-8 border border-brand-gray/6">
+            <h3 class="font-heading text-xl font-medium text-brand-dark mb-3">Bridge the Gap with Supplier Financing</h3>
+            <p class="text-[15px] text-brand-gray/50 leading-relaxed mb-6">Don't let a temporary cash shortage slow you down. Get up to 60 days to pay your suppliers, giving you breathing room to manage your cash flow.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div class="bg-brand-surface rounded-xl p-4 border border-brand-gray/6">
+                <p class="text-[10px] uppercase tracking-[0.12em] text-brand-gray/40 font-semibold mb-1">Funding Amount</p>
+                <p class="text-[15px] font-semibold text-brand-dark">R20,000 to R100,000</p>
+              </div>
+              <div class="bg-brand-surface rounded-xl p-4 border border-brand-gray/6">
+                <p class="text-[10px] uppercase tracking-[0.12em] text-brand-gray/40 font-semibold mb-1">Repayment Term</p>
+                <p class="text-[15px] font-semibold text-brand-dark">Up to 60 days</p>
+              </div>
+              <div class="bg-brand-surface rounded-xl p-4 border border-brand-gray/6">
+                <p class="text-[10px] uppercase tracking-[0.12em] text-brand-gray/40 font-semibold mb-1">How it Works</p>
+                <p class="text-[13px] font-medium text-brand-dark">Submit your invoice, pick up your goods, pay us back later.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="tab-contract" class="tab-content hidden">
+          <div class="card-hover bg-white rounded-2xl p-8 border border-brand-gray/6">
+            <h3 class="font-heading text-xl font-medium text-brand-dark mb-3">Secure Funding to Deliver</h3>
+            <p class="text-[15px] text-brand-gray/50 leading-relaxed mb-6">Don't miss out on growth opportunities due to lack of capital. Get the funds you need to fulfil your contract and grow your business.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div class="bg-brand-surface rounded-xl p-4 border border-brand-gray/6">
+                <p class="text-[10px] uppercase tracking-[0.12em] text-brand-gray/40 font-semibold mb-1">Funding Amount</p>
+                <p class="text-[15px] font-semibold text-brand-dark">R100,000 to R5,000,000</p>
+              </div>
+              <div class="bg-brand-surface rounded-xl p-4 border border-brand-gray/6">
+                <p class="text-[10px] uppercase tracking-[0.12em] text-brand-gray/40 font-semibold mb-1">Repayment Term</p>
+                <p class="text-[15px] font-semibold text-brand-dark">Up to 180 days</p>
+              </div>
+              <div class="bg-brand-surface rounded-xl p-4 border border-brand-gray/6">
+                <p class="text-[10px] uppercase tracking-[0.12em] text-brand-gray/40 font-semibold mb-1">How it Works</p>
+                <p class="text-[13px] font-medium text-brand-dark">Grow your business, take on bigger projects, repay when you get paid.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="tab-invoice" class="tab-content hidden">
+          <div class="card-hover bg-white rounded-2xl p-8 border border-brand-gray/6">
+            <h3 class="font-heading text-xl font-medium text-brand-dark mb-3">Get Your Cash Flowing</h3>
+            <p class="text-[15px] text-brand-gray/50 leading-relaxed mb-6">Don't let unpaid invoices hold your business back. Our invoice financing turns your outstanding invoices into immediate cash, so you can keep your operations running smoothly.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div class="bg-brand-surface rounded-xl p-4 border border-brand-gray/6">
+                <p class="text-[10px] uppercase tracking-[0.12em] text-brand-gray/40 font-semibold mb-1">Funding Amount</p>
+                <p class="text-[15px] font-semibold text-brand-dark">R50,000 to R5,000,000</p>
+              </div>
+              <div class="bg-brand-surface rounded-xl p-4 border border-brand-gray/6">
+                <p class="text-[10px] uppercase tracking-[0.12em] text-brand-gray/40 font-semibold mb-1">Repayment Term</p>
+                <p class="text-[15px] font-semibold text-brand-dark">Up to 180 days</p>
+              </div>
+              <div class="bg-brand-surface rounded-xl p-4 border border-brand-gray/6">
+                <p class="text-[10px] uppercase tracking-[0.12em] text-brand-gray/40 font-semibold mb-1">How it Works</p>
+                <p class="text-[13px] font-medium text-brand-dark">Improve cash flow and pay us back when you get paid.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="tab-asset" class="tab-content hidden">
+          <div class="card-hover bg-white rounded-2xl p-8 border border-brand-gray/6">
+            <h3 class="font-heading text-xl font-medium text-brand-dark mb-3">Financing New Equipment Has Never Been Easier</h3>
+            <p class="text-[15px] text-brand-gray/50 leading-relaxed mb-6">Whether it's new equipment or technology, asset financing makes it possible to acquire the tools you need to expand and thrive.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div class="bg-brand-surface rounded-xl p-4 border border-brand-gray/6">
+                <p class="text-[10px] uppercase tracking-[0.12em] text-brand-gray/40 font-semibold mb-1">Funding Amount</p>
+                <p class="text-[15px] font-semibold text-brand-dark">R50,000 to R300,000</p>
+              </div>
+              <div class="bg-brand-surface rounded-xl p-4 border border-brand-gray/6">
+                <p class="text-[10px] uppercase tracking-[0.12em] text-brand-gray/40 font-semibold mb-1">Repayment Term</p>
+                <p class="text-[15px] font-semibold text-brand-dark">Up to 18 months</p>
+              </div>
+              <div class="bg-brand-surface rounded-xl p-4 border border-brand-gray/6">
+                <p class="text-[10px] uppercase tracking-[0.12em] text-brand-gray/40 font-semibold mb-1">How it Works</p>
+                <p class="text-[13px] font-medium text-brand-dark">Upgrade your equipment, increase productivity, and make affordable monthly payments.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ NEWSLETTER ══════════════════════════ -->
+  <section class="py-20">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+      <div class="flex items-center justify-center gap-4 mb-3">
+        <div class="w-6 h-px bg-brand-primary"></div>
+        <span class="text-[10px] font-semibold uppercase tracking-[0.15em] text-brand-primary">Newsletter</span>
+        <div class="w-6 h-px bg-brand-primary"></div>
+      </div>
+      <h2 class="font-heading text-[28px] font-normal text-brand-dark leading-tight mb-3">Keep in <span class="heading-accent">touch</span></h2>
+      <p class="text-[15px] text-brand-gray/50 mb-8">Sign up for tips, insights & inspiring stories to help grow your business.</p>
+      <div class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+        <input type="email" id="newsletter-email" placeholder="Email Address" class="newsletter-glow flex-1 px-4 py-3 text-[14px] text-brand-dark bg-white border border-brand-gray/10 rounded-full placeholder:text-brand-gray/30 focus:outline-none focus:border-brand-primary/40 transition">
+        <button id="newsletter-submit" class="btn inline-flex items-center justify-center gap-2 px-7 py-3 bg-brand-dark text-white text-[14px] font-semibold rounded-full hover:bg-brand-dark/90 hover:shadow-lg whitespace-nowrap">
+          Subscribe <span class="opacity-50">&rarr;</span>
+        </button>
+      </div>
+      <p class="text-[11px] text-brand-gray/30 mt-4">By signing up, you consent to the processing of your personal information for the purpose of online marketing by means of electronic communications.</p>
+    </div>
+  </section>
+
+  <!-- Newsletter Modal -->
+  <div id="newsletter-modal" class="fixed inset-0 z-[9999] hidden items-center justify-center" style="background: rgba(0,0,0,0.5); backdrop-filter: blur(4px);">
+    <div class="bg-white rounded-2xl w-full max-w-md mx-4 overflow-hidden shadow-2xl" id="newsletter-modal-content">
+      <!-- Step 1: Extra details -->
+      <div id="nl-step-details" class="p-8">
+        <div class="flex items-center justify-between mb-6">
+          <div>
+            <h3 class="font-heading text-xl font-medium text-brand-dark">Almost there!</h3>
+            <p class="text-[13px] text-brand-gray/50 mt-1">Just a few more details to personalise your updates.</p>
+          </div>
+          <button id="nl-close" class="w-8 h-8 rounded-full bg-brand-gray/5 flex items-center justify-center hover:bg-brand-gray/10 transition">
+            <svg class="w-4 h-4 text-brand-gray/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+        <div class="space-y-4">
+          <div>
+            <label class="block text-[11px] font-bold uppercase tracking-[0.12em] text-brand-gray/50 mb-2">First Name</label>
+            <input type="text" id="nl-firstname" placeholder="e.g. Thabo" class="w-full px-4 py-3 text-[14px] text-brand-dark bg-brand-surface border border-brand-gray/10 rounded-xl placeholder:text-brand-gray/25 focus:outline-none focus:border-brand-primary/40 transition">
+          </div>
+          <div>
+            <label class="block text-[11px] font-bold uppercase tracking-[0.12em] text-brand-gray/50 mb-2">Last Name</label>
+            <input type="text" id="nl-lastname" placeholder="e.g. Mokoena" class="w-full px-4 py-3 text-[14px] text-brand-dark bg-brand-surface border border-brand-gray/10 rounded-xl placeholder:text-brand-gray/25 focus:outline-none focus:border-brand-primary/40 transition">
+          </div>
+          <div>
+            <label class="block text-[11px] font-bold uppercase tracking-[0.12em] text-brand-gray/50 mb-2">Sector</label>
+            <select id="nl-sector" class="w-full px-4 py-3 text-[14px] text-brand-dark bg-brand-surface border border-brand-gray/10 rounded-xl focus:outline-none focus:border-brand-primary/40 transition appearance-none">
+              <option value="" disabled selected>Select your sector</option>
+              <option>Agriculture</option>
+              <option>Food Processing</option>
+              <option>Food Retail</option>
+              <option>Livestock</option>
+              <option>Fresh Produce</option>
+              <option>Beverages</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+        <button id="nl-confirm" class="btn w-full mt-6 inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-brand-accent text-white text-[14px] font-semibold rounded-full hover:bg-brand-accent/90 hover:shadow-lg hover:shadow-brand-accent/20">
+          Complete Sign Up <span class="opacity-60">&rarr;</span>
+        </button>
+      </div>
+      <!-- Step 2: Success -->
+      <div id="nl-step-success" class="p-8 text-center hidden">
+        <div class="w-16 h-16 rounded-full bg-brand-accent/10 flex items-center justify-center mx-auto mb-5" style="animation: popIn 0.5s cubic-bezier(0.34,1.56,0.64,1) forwards;">
+          <svg class="w-8 h-8 text-brand-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+        </div>
+        <h3 class="font-heading text-xl font-medium text-brand-dark mb-2">You're signed up!</h3>
+        <p class="text-[14px] text-brand-gray/50 mb-6">We'll keep you posted with the latest tips, insights and growth stories.</p>
+        <button id="nl-done" class="btn inline-flex items-center justify-center gap-2 px-7 py-3 bg-brand-dark text-white text-[14px] font-semibold rounded-full hover:bg-brand-dark/90">
+          Done
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════ CHATBOT ══════════════════════════ -->
+  <!-- Floating button -->
+  <button id="chatbot-toggle" class="fixed bottom-6 right-6 z-[9990] w-14 h-14 rounded-full bg-brand-dark shadow-lg shadow-brand-dark/20 flex items-center justify-center hover:scale-105 transition-transform" aria-label="Chat with Pumpkn AI">
+    <svg id="chatbot-icon-open" class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z"/></svg>
+    <svg id="chatbot-icon-close" class="w-6 h-6 text-white hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+  </button>
+
+  <!-- Chat window -->
+  <div id="chatbot-window" class="fixed bottom-24 right-6 z-[9990] w-[360px] max-h-[520px] bg-white rounded-2xl shadow-2xl shadow-black/15 border border-brand-gray/6 flex-col overflow-hidden hidden" style="display: none;">
+    <!-- Header -->
+    <div class="flex items-center gap-3 px-5 py-3.5 border-b border-brand-gray/6 flex-shrink-0">
+      <div class="w-9 h-9 rounded-full bg-brand-dark flex items-center justify-center flex-shrink-0">
+        <svg class="w-4 h-4 text-brand-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/></svg>
+      </div>
+      <div class="flex-1">
+        <p class="text-[14px] font-semibold text-brand-dark">Pumpkn AI</p>
+        <div class="flex items-center gap-1.5">
+          <div class="w-1.5 h-1.5 rounded-full bg-brand-accent"></div>
+          <p class="text-[11px] text-brand-gray/40">Your Funding Partner</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Messages -->
+    <div id="chatbot-messages" class="flex-1 px-4 py-4 space-y-3 overflow-y-auto" style="max-height: 360px; min-height: 300px;"></div>
+
+    <!-- Input -->
+    <div class="px-4 py-3 border-t border-brand-gray/6 flex items-center gap-2 flex-shrink-0">
+      <input type="text" id="chatbot-input" placeholder="Type a message..." class="flex-1 px-4 py-2.5 text-[14px] text-brand-dark bg-brand-surface border border-brand-gray/8 rounded-full placeholder:text-brand-gray/30 focus:outline-none focus:border-brand-primary/40 transition">
+      <button id="chatbot-send" class="w-9 h-9 rounded-full bg-brand-dark flex items-center justify-center flex-shrink-0 hover:bg-brand-dark/90 transition">
+        <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════ FOOTER ══════════════════════════ -->
+  <footer class="surface-gradient-dark text-white/30 py-16 relative overflow-hidden">
+    <div class="absolute inset-0 flex items-center justify-center opacity-[0.02]">
+      <span class="text-[200px] font-heading font-bold tracking-tight">p</span>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+        <div class="md:col-span-2">
+          <img src="./images/68af30aeb4914acc8c36dec8_cropped_pumpkn_logo_2-removebg-preview.png" alt="Pumpkn" class="h-10 mb-4 brightness-0 invert opacity-60">
+          <p class="text-[14px] text-white/35 leading-relaxed max-w-sm">Meet Pumpkn, the financial partner you can bank on.</p>
+          <div class="flex items-center gap-4 mt-6">
+            <a href="https://www.linkedin.com/company/pumpkn/" target="_blank" class="w-9 h-9 rounded-full bg-white/6 flex items-center justify-center hover:bg-white/12 transition">
+              <img src="./images/6876191b7d74b10df8a3951f_LinkedIn.svg" alt="LinkedIn" class="w-4 h-4 brightness-0 invert opacity-50">
+            </a>
+            <a href="https://www.facebook.com/pumpkn.io" target="_blank" class="w-9 h-9 rounded-full bg-white/6 flex items-center justify-center hover:bg-white/12 transition">
+              <img src="./images/6876191b7d74b10df8a3951e_Facebook.svg" alt="Facebook" class="w-4 h-4 brightness-0 invert opacity-50">
+            </a>
+            <a href="https://www.youtube.com/@Pumpkn-Finance" target="_blank" class="w-9 h-9 rounded-full bg-white/6 flex items-center justify-center hover:bg-white/12 transition">
+              <img src="./images/6876191b7d74b10df8a3951d_Youtube.svg" alt="YouTube" class="w-4 h-4 brightness-0 invert opacity-50">
+            </a>
+            <a href="https://wa.me/27766489542" target="_blank" class="w-9 h-9 rounded-full bg-white/6 flex items-center justify-center hover:bg-white/12 transition">
+              <img src="./images/6876191b7d74b10df8a3958c_WhatsApp.png" alt="WhatsApp" class="w-4 h-4 brightness-0 invert opacity-50">
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <p class="text-[11px] font-semibold uppercase tracking-[0.14em] text-white/20 mb-4">Quick Links</p>
+          <div class="space-y-2.5">
+            <a href="/" class="block text-[13px] text-white/40 hover:text-white/70 transition">Home</a>
+            <a href="/about-us/why-we-are" class="block text-[13px] text-white/40 hover:text-white/70 transition">About Us</a>
+            <a href="/info-hub/faqs" class="block text-[13px] text-white/40 hover:text-white/70 transition">FAQs</a>
+            <a href="/contact-us" class="block text-[13px] text-white/40 hover:text-white/70 transition">Contact Us</a>
+            <a href="/support" class="block text-[13px] text-white/40 hover:text-white/70 transition">Support</a>
+          </div>
+        </div>
+
+        <div>
+          <p class="text-[11px] font-semibold uppercase tracking-[0.14em] text-white/20 mb-4">Contact</p>
+          <div class="space-y-2.5">
+            <p class="text-[13px] text-white/40">The Heritage Firestation<br>16 Baker Street<br>Rosebank, Johannesburg, 2193</p>
+            <a href="mailto:info@pumpkn.io" class="block text-[13px] text-white/40 hover:text-white/70 transition">info@pumpkn.io</a>
+            <a href="mailto:support@pumpkn.io" class="block text-[13px] text-white/40 hover:text-white/70 transition">support@pumpkn.io</a>
+            <p class="text-[13px] text-white/40">021 234 4567</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-white/6 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-[11px] text-white/20">&copy; 2026 AG-Digital Ventures (Pty) Ltd. All rights reserved. AG-Digital Ventures (Pty) Ltd. t/a Pumpkn.io is a registered Credit Provider in terms of the National Credit Act. NCR registration number NCRCP18413</p>
+        <div class="flex gap-4">
+          <a href="/privacy-policy" class="text-[11px] text-white/25 hover:text-white/50 transition">Privacy Policy</a>
+          <a href="/terms-conditions" class="text-[11px] text-white/25 hover:text-white/50 transition">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ══════════════════════════ COOKIE CONSENT ══════════════════════════ -->
+  <!-- Banner -->
+  <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-[10000] hidden">
+    <div class="flex justify-center px-4 pb-4">
+      <div class="bg-white rounded-full shadow-lg shadow-black/8 border border-brand-gray/8 px-5 py-2.5 flex items-center gap-4">
+        <p class="text-[12px] text-brand-gray/60 leading-snug">We use cookies to personalise your experience & power our <span class="inline-flex items-center gap-0.5"><svg class="w-3 h-3 text-brand-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/></svg><strong class="text-brand-dark">AI</strong></span> &middot; <a href="/privacy-policy" class="text-brand-primary font-semibold hover:underline">Policy</a></p>
+        <div class="flex items-center gap-1.5">
+          <button id="cookie-manage" class="px-3 py-1.5 text-[11px] font-semibold text-brand-gray/40 hover:text-brand-dark transition">Manage</button>
+          <button id="cookie-reject" class="px-3 py-1.5 text-[11px] font-semibold text-brand-dark border border-brand-dark/10 rounded-full hover:border-brand-dark/25 transition">Reject</button>
+          <button id="cookie-accept" class="px-4 py-1.5 text-[11px] font-semibold text-white bg-brand-dark rounded-full hover:bg-brand-dark/90 transition">Accept</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Preferences Modal -->
+  <div id="cookie-modal" class="fixed inset-0 z-[10001] hidden items-center justify-center" style="background: rgba(0,0,0,0.5); backdrop-filter: blur(4px);">
+    <div class="bg-white rounded-2xl w-full max-w-lg mx-4 shadow-2xl overflow-hidden max-h-[90vh] flex flex-col">
+      <!-- Header -->
+      <div class="px-6 pt-6 pb-4 border-b border-brand-gray/6 flex-shrink-0">
+        <div class="flex items-center justify-between mb-2">
+          <h3 class="font-heading text-xl font-medium text-brand-dark">Cookie Preferences</h3>
+          <button id="cookie-modal-close" class="w-8 h-8 rounded-full bg-brand-gray/5 flex items-center justify-center hover:bg-brand-gray/10 transition">
+            <svg class="w-4 h-4 text-brand-gray/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+        <p class="text-[13px] text-brand-gray/50 leading-relaxed">Under POPIA (Protection of Personal Information Act), you have the right to control how your data is collected. Configure your cookie preferences below.</p>
+      </div>
+
+      <!-- Cookie categories -->
+      <div class="px-6 py-4 overflow-y-auto flex-1 space-y-4">
+        <!-- Essential -->
+        <div class="bg-brand-surface rounded-xl border border-brand-gray/6 p-4">
+          <div class="flex items-center justify-between mb-2">
+            <div class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-brand-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/></svg>
+              <h4 class="text-[14px] font-bold text-brand-dark">Essential</h4>
+            </div>
+            <span class="text-[11px] font-semibold text-brand-primary bg-brand-primary/8 px-2.5 py-1 rounded-full">Always Active</span>
+          </div>
+          <p class="text-[12px] text-brand-gray/45 leading-relaxed">Required for the website to function. These enable core features like security, session management, and accessibility. Cannot be disabled.</p>
+        </div>
+
+        <!-- Analytics -->
+        <div class="bg-white rounded-xl border border-brand-gray/6 p-4">
+          <div class="flex items-center justify-between mb-2">
+            <div class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-brand-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z"/></svg>
+              <h4 class="text-[14px] font-bold text-brand-dark">Analytics</h4>
+            </div>
+            <label class="relative inline-flex items-center cursor-pointer">
+              <input type="checkbox" id="cookie-analytics" class="sr-only peer">
+              <div class="w-10 h-5 bg-brand-gray/15 peer-focus:ring-2 peer-focus:ring-brand-primary/20 rounded-full peer peer-checked:after:translate-x-5 after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:shadow-sm after:transition-all peer-checked:bg-brand-accent"></div>
+            </label>
+          </div>
+          <p class="text-[12px] text-brand-gray/45 leading-relaxed">Help us understand how visitors interact with our website. We use Google Analytics and Hotjar to improve performance and user experience. Data is anonymised.</p>
+        </div>
+
+        <!-- Marketing -->
+        <div class="bg-white rounded-xl border border-brand-gray/6 p-4">
+          <div class="flex items-center justify-between mb-2">
+            <div class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-brand-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M10.34 15.84c-.688-.06-1.386-.09-2.09-.09H7.5a4.5 4.5 0 110-9h.75c.704 0 1.402-.03 2.09-.09m0 9.18c.253.962.584 1.892.985 2.783.247.55.06 1.21-.463 1.511l-.657.38c-.551.318-1.26.117-1.527-.461a20.845 20.845 0 01-1.44-4.282m3.102.069a18.03 18.03 0 01-.59-4.59c0-1.586.205-3.124.59-4.59m0 9.18a23.848 23.848 0 018.835 2.535M10.34 6.66a23.847 23.847 0 008.835-2.535m0 0A23.74 23.74 0 0018.795 3m.38 1.125a23.91 23.91 0 011.014 5.395m-1.014 8.855c-.118.38-.245.754-.38 1.125m.38-1.125a23.91 23.91 0 001.014-5.395m0-3.46c.495.413.811 1.035.811 1.73 0 .695-.316 1.317-.811 1.73m0-3.46a24.347 24.347 0 010 3.46"/></svg>
+              <h4 class="text-[14px] font-bold text-brand-dark">Marketing</h4>
+            </div>
+            <label class="relative inline-flex items-center cursor-pointer">
+              <input type="checkbox" id="cookie-marketing" class="sr-only peer">
+              <div class="w-10 h-5 bg-brand-gray/15 peer-focus:ring-2 peer-focus:ring-brand-primary/20 rounded-full peer peer-checked:after:translate-x-5 after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:shadow-sm after:transition-all peer-checked:bg-brand-accent"></div>
+            </label>
+          </div>
+          <p class="text-[12px] text-brand-gray/45 leading-relaxed">Used to deliver relevant advertising and track campaign performance across platforms. Includes Google Ads and Meta pixel tracking.</p>
+        </div>
+
+        <!-- Functional -->
+        <div class="bg-white rounded-xl border border-brand-gray/6 p-4">
+          <div class="flex items-center justify-between mb-2">
+            <div class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-brand-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              <h4 class="text-[14px] font-bold text-brand-dark">Functional</h4>
+            </div>
+            <label class="relative inline-flex items-center cursor-pointer">
+              <input type="checkbox" id="cookie-functional" class="sr-only peer">
+              <div class="w-10 h-5 bg-brand-gray/15 peer-focus:ring-2 peer-focus:ring-brand-primary/20 rounded-full peer peer-checked:after:translate-x-5 after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:shadow-sm after:transition-all peer-checked:bg-brand-accent"></div>
+            </label>
+          </div>
+          <p class="text-[12px] text-brand-gray/45 leading-relaxed">Enable enhanced features like chat widgets, embedded content, and personalised preferences. Disabling may limit some site functionality.</p>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="px-6 py-4 border-t border-brand-gray/6 flex-shrink-0">
+        <div class="flex flex-col sm:flex-row gap-2">
+          <button id="cookie-save-prefs" class="flex-1 px-5 py-3 text-[13px] font-semibold text-white bg-brand-dark rounded-full hover:bg-brand-dark/90 transition">
+            Save Preferences
+          </button>
+          <button id="cookie-accept-all-modal" class="flex-1 px-5 py-3 text-[13px] font-semibold text-brand-dark bg-brand-surface rounded-full hover:bg-brand-gray/8 transition">
+            Accept All
+          </button>
+        </div>
+        <p class="text-[11px] text-brand-gray/30 text-center mt-3">You can change your preferences at any time. Read our <a href="/privacy-policy" class="text-brand-primary hover:underline">Privacy Policy</a> and <a href="/terms-conditions" class="text-brand-primary hover:underline">Terms of Service</a>.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════ SCRIPTS ══════════════════════════ -->
+  <script>
+    // ─── Cookie Consent (POPIA Compliant) ───
+    (function() {
+      const STORAGE_KEY = 'pumpkn_cookie_consent';
+      const banner = document.getElementById('cookie-banner');
+      const modal = document.getElementById('cookie-modal');
+      if (!banner || !modal) return;
+
+      // Force reset if ?cookies=reset in URL
+      if (window.location.search.includes('cookies=reset')) {
+        localStorage.removeItem(STORAGE_KEY);
+        history.replaceState(null, '', window.location.pathname);
+      }
+
+      // Check if consent already given
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved) {
+        applyConsent(JSON.parse(saved));
+      } else {
+        // Show banner after short delay
+        setTimeout(() => {
+          banner.classList.remove('hidden');
+          banner.style.animation = 'slideUp 0.4s ease forwards';
+        }, 1500);
+      }
+
+      function getPrefs() {
+        return {
+          essential: true, // always true
+          analytics: document.getElementById('cookie-analytics').checked,
+          marketing: document.getElementById('cookie-marketing').checked,
+          functional: document.getElementById('cookie-functional').checked,
+          timestamp: new Date().toISOString(),
+        };
+      }
+
+      function saveConsent(prefs) {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(prefs));
+        applyConsent(prefs);
+        closeBanner();
+        closeModal();
+      }
+
+      function applyConsent(prefs) {
+        // Analytics: load GTM / Hotjar only if consented
+        if (prefs.analytics) {
+          // Google Tag Manager
+          if (!window._gtmLoaded) {
+            window._gtmLoaded = true;
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+            var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+            j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-WVB862NP');
+          }
+          // Hotjar
+          if (!window._hjLoaded) {
+            window._hjLoaded = true;
+            (function(h,o,t,j,a,r){
+              h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+              h._hjSettings={hjid:4945179,hjsv:6};
+              a=o.getElementsByTagName('head')[0];
+              r=o.createElement('script');r.async=1;
+              r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+              a.appendChild(r);
+            })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+          }
+        }
+
+        // Marketing: placeholder for future ad pixels
+        if (prefs.marketing) {
+          // Load Google Ads, Meta Pixel, etc. here when ready
+        }
+
+        // Functional: chatbot, embedded widgets
+        if (prefs.functional) {
+          // Chatbot is already loaded inline — could gate it here if needed
+        }
+      }
+
+      function closeBanner() {
+        banner.style.animation = 'slideDown 0.3s ease forwards';
+        setTimeout(() => banner.classList.add('hidden'), 300);
+      }
+
+      function openModal() {
+        // Pre-populate toggles from saved prefs if they exist
+        const saved = localStorage.getItem(STORAGE_KEY);
+        if (saved) {
+          const prefs = JSON.parse(saved);
+          document.getElementById('cookie-analytics').checked = prefs.analytics;
+          document.getElementById('cookie-marketing').checked = prefs.marketing;
+          document.getElementById('cookie-functional').checked = prefs.functional;
+        }
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      }
+
+      function closeModal() {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+
+      // Banner buttons
+      document.getElementById('cookie-accept').addEventListener('click', () => {
+        saveConsent({ essential: true, analytics: true, marketing: true, functional: true, timestamp: new Date().toISOString() });
+      });
+
+      document.getElementById('cookie-reject').addEventListener('click', () => {
+        saveConsent({ essential: true, analytics: false, marketing: false, functional: false, timestamp: new Date().toISOString() });
+      });
+
+      document.getElementById('cookie-manage').addEventListener('click', () => {
+        closeBanner();
+        setTimeout(openModal, 350);
+      });
+
+      // Modal buttons
+      document.getElementById('cookie-modal-close').addEventListener('click', closeModal);
+      modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+
+      document.getElementById('cookie-save-prefs').addEventListener('click', () => {
+        saveConsent(getPrefs());
+      });
+
+      document.getElementById('cookie-accept-all-modal').addEventListener('click', () => {
+        document.getElementById('cookie-analytics').checked = true;
+        document.getElementById('cookie-marketing').checked = true;
+        document.getElementById('cookie-functional').checked = true;
+        saveConsent(getPrefs());
+      });
+    })();
+
+    // ─── Hero Glass Chat Animation ───
+    (function() {
+      const c = document.getElementById('hero-chat');
+      if (!c) return;
+
+      const sparkle = `<div class="w-5 h-5 rounded-full bg-brand-accent/20 flex items-center justify-center flex-shrink-0"><svg class="w-2.5 h-2.5 text-brand-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/></svg></div>`;
+
+      function addEl(html) {
+        const d = document.createElement('div');
+        d.style.opacity = '0'; d.style.transform = 'translateY(8px)';
+        d.style.transition = 'all 0.35s cubic-bezier(0.4,0,0.2,1)';
+        d.innerHTML = html;
+        c.appendChild(d);
+        requestAnimationFrame(() => { d.style.opacity = '1'; d.style.transform = 'translateY(0)'; });
+        c.scrollTop = c.scrollHeight;
+        return d;
+      }
+
+      function bot(text) {
+        return addEl(`<div class="flex items-end gap-1.5">${sparkle}<div class="bg-white/10 rounded-2xl rounded-bl-sm px-3 py-2 max-w-[240px]"><p class="text-[12px] text-white/80 leading-relaxed">${text}</p></div></div>`);
+      }
+      function user(text) {
+        return addEl(`<div class="flex justify-end"><div class="bg-brand-accent rounded-2xl rounded-br-sm px-3 py-2 max-w-[220px]"><p class="text-[12px] text-white leading-relaxed">${text}</p></div></div>`);
+      }
+      function botDots() {
+        return addEl(`<div class="flex items-end gap-1.5">${sparkle}<div class="bg-white/10 rounded-2xl rounded-bl-sm px-3 py-2 inline-flex gap-1 items-center"><span class="w-1.5 h-1.5 rounded-full bg-white/30 animate-bounce" style="animation-delay:0ms"></span><span class="w-1.5 h-1.5 rounded-full bg-white/30 animate-bounce" style="animation-delay:150ms"></span><span class="w-1.5 h-1.5 rounded-full bg-white/30 animate-bounce" style="animation-delay:300ms"></span></div></div>`);
+      }
+      function checklist() {
+        return addEl(`<div class="flex items-end gap-1.5">${sparkle}
+          <div class="bg-white/10 rounded-2xl rounded-bl-sm px-3 py-2.5 max-w-[240px]">
+            <p class="text-[11px] text-white/50 mb-1.5">Please upload:</p>
+            <div class="space-y-1.5" id="hero-checklist">
+              <div class="flex items-center gap-1.5 hc-item"><div class="w-4 h-4 rounded border border-white/20 flex items-center justify-center hc-box"><svg class="w-2.5 h-2.5 text-brand-accent hidden hc-tick" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></div><span class="text-[11px] text-white/60">Copy of ID</span></div>
+              <div class="flex items-center gap-1.5 hc-item"><div class="w-4 h-4 rounded border border-white/20 flex items-center justify-center hc-box"><svg class="w-2.5 h-2.5 text-brand-accent hidden hc-tick" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></div><span class="text-[11px] text-white/60">CIPC Certificate</span></div>
+              <div class="flex items-center gap-1.5 hc-item"><div class="w-4 h-4 rounded border border-white/20 flex items-center justify-center hc-box"><svg class="w-2.5 h-2.5 text-brand-accent hidden hc-tick" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></div><span class="text-[11px] text-white/60">Proof of Address</span></div>
+              <div class="flex items-center gap-1.5 hc-item"><div class="w-4 h-4 rounded border border-white/20 flex items-center justify-center hc-box"><svg class="w-2.5 h-2.5 text-brand-accent hidden hc-tick" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></div><span class="text-[11px] text-white/60">Bank Statements (6 mo)</span></div>
+              <div class="flex items-center gap-1.5 hc-item"><div class="w-4 h-4 rounded border border-white/20 flex items-center justify-center hc-box"><svg class="w-2.5 h-2.5 text-brand-accent hidden hc-tick" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></div><span class="text-[11px] text-white/60">Credit Check Consent</span></div>
+            </div>
+          </div></div>`);
+      }
+      function approval() {
+        return addEl(`<div class="flex items-end gap-1.5">${sparkle}
+          <div class="bg-brand-accent/15 border border-brand-accent/20 rounded-2xl rounded-bl-sm px-3 py-3 max-w-[240px]">
+            <div class="flex items-center gap-1.5 mb-1.5">
+              <svg class="w-4 h-4 text-brand-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              <span class="text-[12px] font-bold text-white">Funds Disbursed!</span>
+            </div>
+            <div class="text-[11px] text-white/50 space-y-0.5">
+              <div class="flex justify-between"><span>Amount</span><span class="font-semibold text-white/80">R250,000</span></div>
+              <div class="flex justify-between"><span>Term</span><span class="font-semibold text-white/80">3 months</span></div>
+            </div>
+          </div></div>`);
+      }
+
+      function tickItem(i) {
+        const items = document.querySelectorAll('.hc-item');
+        if (!items[i]) return;
+        const box = items[i].querySelector('.hc-box');
+        const tick = items[i].querySelector('.hc-tick');
+        box.style.backgroundColor = 'rgba(120,182,72,0.3)';
+        box.style.borderColor = 'rgba(120,182,72,0.5)';
+        tick.classList.remove('hidden');
+      }
+
+      function wait(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+      async function run() {
+        c.innerHTML = '';
+
+        let d = botDots(); await wait(800); d.remove();
+        bot("Hey there! I'm your Pumpkn AI Advisor. How can I help you today?");
+        await wait(1600);
+
+        user("Hi! I'm looking for funding for my business.");
+        await wait(1400);
+
+        d = botDots(); await wait(600); d.remove();
+        bot("Of course! Tell me a bit about your business.");
+        await wait(1600);
+
+        user("I run a food retail business in Joburg, been trading for 2 years. About R120K monthly turnover.");
+        await wait(1800);
+
+        d = botDots(); await wait(700); d.remove();
+        bot("Great profile! What would you like to use the funding for, and over what period?");
+        await wait(1600);
+
+        user("Working capital of R250K to stock up for the holiday season. 3 months would be ideal.");
+        await wait(1800);
+
+        d = botDots(); await wait(800); d.remove();
+        bot("Perfect, let me process your application. I'll just need a few documents:");
+        await wait(600);
+
+        checklist();
+        await wait(1200);
+
+        for (let i = 0; i < 5; i++) { tickItem(i); await wait(500); }
+        await wait(1000);
+
+        d = botDots(); await wait(800); d.remove();
+        bot("All verified! Your application has been submitted.");
+        await wait(2200);
+
+        d = botDots(); await wait(1000); d.remove();
+        bot("Congratulations, you've been approved! Your funds have been disbursed.");
+        await wait(800);
+
+        approval();
+        await wait(5000);
+
+        run();
+      }
+
+      setTimeout(run, 1500);
+    })();
+
+    // Navbar scroll behavior
+    window.addEventListener('scroll', () => {
+      const navbar = document.querySelector('.navbar-v2');
+      if (window.scrollY > 100) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Mobile menu toggle
+    document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+
+    // Product tabs
+    document.querySelectorAll('#product-tabs .product-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('#product-tabs .product-tab').forEach(t => {
+          t.classList.remove('active');
+          t.classList.add('text-brand-dark');
+        });
+        tab.classList.add('active');
+        tab.classList.remove('text-brand-dark');
+
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.add('hidden'));
+        document.getElementById('tab-' + tab.dataset.tab).classList.remove('hidden');
+      });
+    });
+
+    // Loan Calculator v2
+    (function() {
+      let selectedMonths = 1;
+      const INITIATION_FEE_RATE = 0.02;
+      const DEFAULT_DAILY_RATE = 0.2 / 100;
+
+      function formatCurrency(amount) {
+        const rounded = Math.round(amount * 100) / 100;
+        return 'R' + rounded.toLocaleString('en-ZA', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      }
+
+      function calculateReducingBalance(principal, periodRate, installments) {
+        const n = installments;
+        const factor = Math.pow(1 + periodRate, n);
+        const installmentAmount = principal * periodRate * factor / (factor - 1);
+        let remainingBalance = principal;
+        let totalInterest = 0;
+        for (let i = 0; i < n; i++) {
+          const interest = remainingBalance * periodRate;
+          totalInterest += interest;
+          remainingBalance -= (installmentAmount - interest);
+        }
+        return { installmentAmount, totalRepayment: installmentAmount * n, totalInterest };
+      }
+
+      function calculate() {
+        const input = document.getElementById('v2-loanAmount');
+        const errorEl = document.getElementById('v2-loanAmountError');
+        const freq = document.getElementById('v2-frequency');
+        let principal = parseInt(input.value) || 0;
+
+        if (principal > 0 && principal < 30000) {
+          errorEl.classList.remove('hidden');
+        } else {
+          errorEl.classList.add('hidden');
+        }
+
+        if (principal === 0) {
+          document.getElementById('v2-interest').textContent = 'R0';
+          document.getElementById('v2-totalRepayment').textContent = 'R0';
+          document.getElementById('v2-installmentAmount').textContent = 'R0';
+          document.getElementById('v2-serviceFee').textContent = 'R0';
+          document.getElementById('v2-totalRepaymentSubtext').textContent = 'Over 0 installments';
+          return;
+        }
+
+        let installments, periodDays;
+        const schedule = freq.value;
+        switch (schedule) {
+          case 'daily': installments = selectedMonths * 30; periodDays = 1; break;
+          case 'weekly': installments = Math.floor(selectedMonths * 4); periodDays = 7; break;
+          case 'bi-weekly': installments = Math.floor(selectedMonths * 2); periodDays = 14; break;
+          default: installments = Math.floor(selectedMonths * 4); periodDays = 7;
+        }
+
+        const periodRate = DEFAULT_DAILY_RATE * periodDays;
+        const result = calculateReducingBalance(principal, periodRate, installments);
+        const initiationFee = principal * INITIATION_FEE_RATE;
+
+        document.getElementById('v2-interest').textContent = formatCurrency(result.totalInterest);
+        document.getElementById('v2-totalRepayment').textContent = formatCurrency(result.totalRepayment + initiationFee);
+        document.getElementById('v2-installmentAmount').textContent = formatCurrency(result.installmentAmount);
+        document.getElementById('v2-serviceFee').textContent = formatCurrency(initiationFee);
+        document.getElementById('v2-totalRepaymentSubtext').textContent = `Over ${installments} installment${installments !== 1 ? 's' : ''}`;
+
+        const labelText = schedule === 'daily' ? 'Daily Repayment' : schedule === 'bi-weekly' ? 'Bi-weekly Repayment' : 'Weekly Repayment';
+        document.getElementById('v2-installmentLabel').textContent = labelText;
+      }
+
+      document.getElementById('v2-loanAmount').addEventListener('input', calculate);
+      document.getElementById('v2-loanAmount').addEventListener('blur', function() {
+        if (this.value === '' || isNaN(parseInt(this.value))) {
+          this.value = 30000;
+          calculate();
+        }
+      });
+      document.getElementById('v2-frequency').addEventListener('change', calculate);
+
+      document.querySelectorAll('#v2-calc-container .calc-duration-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('#v2-calc-container .calc-duration-btn').forEach(b => {
+            b.classList.remove('active');
+            b.textContent = b.dataset.months;
+          });
+          btn.classList.add('active');
+          const months = parseInt(btn.dataset.months);
+          btn.textContent = `${months} month${months > 1 ? 's' : ''}`;
+          selectedMonths = months;
+          calculate();
+        });
+      });
+
+      calculate();
+    })();
+
+    // ─── Steps SaaS card animation ───
+    (function() {
+      const container = document.getElementById('steps-cards');
+      if (!container) return;
+      let running = false;
+
+      function wait(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+      async function runSteps() {
+        if (running) return;
+        running = true;
+
+        const typeEl = container.querySelector('.step-type');
+        const cursorEl = container.querySelector('.step-cursor');
+        const amountEl = container.querySelector('.step-amount');
+        const docs = container.querySelectorAll('.step-doc');
+        const submit = container.querySelector('.step-submit');
+        const offers = container.querySelectorAll('.step-offer');
+        const invoices = container.querySelectorAll('.step-inv');
+
+        // Reset
+        if (typeEl) { typeEl.textContent = ''; }
+        if (amountEl) { amountEl.textContent = ''; }
+        docs.forEach(d => d.style.opacity = '0');
+        if (submit) submit.style.opacity = '0';
+        offers.forEach(o => { o.style.opacity = '0'; });
+        invoices.forEach(i => { i.style.opacity = '0'; });
+
+        await wait(800);
+
+        // Type business name
+        const name = 'Fresh Harvest Foods';
+        for (let i = 0; i <= name.length; i++) {
+          if (typeEl) typeEl.textContent = name.slice(0, i);
+          await wait(50);
+        }
+        await wait(300);
+
+        if (amountEl) amountEl.textContent = 'R250,000';
+        await wait(500);
+
+        for (const doc of docs) { doc.style.opacity = '1'; await wait(250); }
+        await wait(300);
+        if (submit) submit.style.opacity = '1';
+        await wait(1000);
+
+        // Offer
+        for (const o of offers) { o.style.opacity = '1'; await wait(400); }
+        await wait(1000);
+
+        // Invoices
+        for (const inv of invoices) { inv.style.opacity = '1'; await wait(350); }
+        await wait(4000);
+
+        running = false;
+        runSteps();
+      }
+
+      const obs = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+          runSteps();
+          obs.disconnect();
+        }
+      }, { threshold: 0.2 });
+      obs.observe(container);
+    })();
+
+    // ─── Calculator CTA modal ───
+    (function() {
+      const btn = document.getElementById('calc-cta-btn');
+      const modal = document.getElementById('calc-modal');
+      const closeBtn = document.getElementById('calc-modal-close');
+      if (!btn || !modal) return;
+
+      btn.addEventListener('click', () => {
+        // Populate recap from current calculator values
+        const amount = document.getElementById('v2-loanAmount');
+        const activeMonth = document.querySelector('#v2-calc-container .calc-duration-btn.active');
+        const repayment = document.getElementById('v2-installmentAmount');
+        const label = document.getElementById('v2-installmentLabel');
+        const total = document.getElementById('v2-totalRepayment');
+
+        document.getElementById('calc-recap-amount').textContent = 'R' + (parseInt(amount.value) || 0).toLocaleString('en-ZA');
+        document.getElementById('calc-recap-duration').textContent = activeMonth ? activeMonth.textContent : '1 month';
+        document.getElementById('calc-recap-repayment').textContent = (repayment ? repayment.textContent : 'R0') + ' ' + (label ? label.textContent.toLowerCase() : '');
+        document.getElementById('calc-recap-total').textContent = total ? total.textContent : 'R0';
+
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      });
+
+      closeBtn.addEventListener('click', () => {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      });
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) { modal.classList.add('hidden'); modal.classList.remove('flex'); }
+      });
+    })();
+
+    // ─── Animation 2: Qualification checkmarks bounce on scroll ───
+    (function() {
+      const checks = document.querySelectorAll('.check-pop');
+      if (!checks.length) return;
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const allChecks = [...checks];
+            const idx = allChecks.indexOf(entry.target);
+            setTimeout(() => entry.target.classList.add('visible'), idx * 200);
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.3 });
+      checks.forEach(c => obs.observe(c));
+    })();
+
+    // ─── Animation 3: Calculator (removed — was causing conflicts) ───
+
+    // ─── Animation 4: FAQ background shift (handled via CSS .faq-item.open) ───
+
+    // ─── Animation 5: Funding ladder pills sequential reveal on scroll ───
+    (function() {
+      const pills = document.querySelectorAll('.ladder-pill');
+      if (!pills.length) return;
+      let triggered = false;
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !triggered) {
+            triggered = true;
+            pills.forEach((pill, i) => {
+              setTimeout(() => pill.classList.add('visible'), i * 250);
+            });
+            obs.disconnect();
+          }
+        });
+      }, { threshold: 0.3 });
+      obs.observe(pills[0]);
+    })();
+
+    // ─── Animation 6: Hero badge pop-in on load ───
+    (function() {
+      const badges = document.querySelectorAll('.badge-pop');
+      badges.forEach((badge, i) => {
+        setTimeout(() => badge.classList.add('visible'), 1000 + i * 200);
+      });
+    })();
+
+    // ─── Chatbot ───
+    (function() {
+      const toggle = document.getElementById('chatbot-toggle');
+      const win = document.getElementById('chatbot-window');
+      const msgs = document.getElementById('chatbot-messages');
+      const input = document.getElementById('chatbot-input');
+      const sendBtn = document.getElementById('chatbot-send');
+      const iconOpen = document.getElementById('chatbot-icon-open');
+      const iconClose = document.getElementById('chatbot-icon-close');
+      if (!toggle || !win) return;
+
+      let isOpen = false;
+      let step = 0;
+      let userData = {};
+
+      function toggleChat() {
+        isOpen = !isOpen;
+        if (isOpen) {
+          win.style.display = 'flex';
+          iconOpen.classList.add('hidden');
+          iconClose.classList.remove('hidden');
+          if (step === 0) startConversation();
+          setTimeout(() => input.focus(), 100);
+        } else {
+          win.style.display = 'none';
+          iconOpen.classList.remove('hidden');
+          iconClose.classList.add('hidden');
+        }
+      }
+
+      toggle.addEventListener('click', toggleChat);
+
+      function botMsg(text, opts) {
+        const wrap = document.createElement('div');
+        wrap.className = 'flex items-start gap-2';
+        let html = `
+          <div class="w-7 h-7 rounded-full bg-brand-dark flex items-center justify-center flex-shrink-0 mt-0.5">
+            <svg class="w-3 h-3 text-brand-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/></svg>
+          </div>
+          <div>
+            <div class="bg-brand-surface rounded-2xl rounded-tl-md px-4 py-3 max-w-[260px]">
+              <p class="text-[13px] text-brand-dark leading-relaxed">${text}</p>
+            </div>`;
+        if (opts && opts.length) {
+          html += '<div class="flex flex-wrap gap-1.5 mt-2">';
+          opts.forEach(o => {
+            html += `<button class="chatbot-opt px-3 py-1.5 text-[12px] font-semibold text-brand-primary bg-brand-primary/8 rounded-full hover:bg-brand-primary/15 transition" data-value="${o}">${o}</button>`;
+          });
+          html += '</div>';
+        }
+        html += '</div>';
+        wrap.innerHTML = html;
+        wrap.style.opacity = '0'; wrap.style.transform = 'translateY(6px)';
+        wrap.style.transition = 'all 0.3s ease';
+        msgs.appendChild(wrap);
+        requestAnimationFrame(() => { wrap.style.opacity = '1'; wrap.style.transform = 'translateY(0)'; });
+        msgs.scrollTop = msgs.scrollHeight;
+
+        // Bind option buttons
+        wrap.querySelectorAll('.chatbot-opt').forEach(btn => {
+          btn.addEventListener('click', () => {
+            userMsg(btn.dataset.value);
+            handleUserInput(btn.dataset.value);
+            // Disable all option buttons in this group
+            wrap.querySelectorAll('.chatbot-opt').forEach(b => { b.disabled = true; b.classList.add('opacity-40'); });
+          });
+        });
+      }
+
+      function userMsg(text) {
+        const wrap = document.createElement('div');
+        wrap.className = 'flex justify-end';
+        wrap.innerHTML = `<div class="bg-brand-dark rounded-2xl rounded-tr-md px-4 py-3 max-w-[240px]"><p class="text-[13px] text-white leading-relaxed">${text}</p></div>`;
+        wrap.style.opacity = '0'; wrap.style.transform = 'translateY(6px)';
+        wrap.style.transition = 'all 0.3s ease';
+        msgs.appendChild(wrap);
+        requestAnimationFrame(() => { wrap.style.opacity = '1'; wrap.style.transform = 'translateY(0)'; });
+        msgs.scrollTop = msgs.scrollHeight;
+      }
+
+      function typing() {
+        const wrap = document.createElement('div');
+        wrap.className = 'flex items-start gap-2 typing-indicator';
+        wrap.innerHTML = `
+          <div class="w-7 h-7 rounded-full bg-brand-dark flex items-center justify-center flex-shrink-0">
+            <svg class="w-3 h-3 text-brand-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/></svg>
+          </div>
+          <div class="bg-brand-surface rounded-2xl rounded-tl-md px-4 py-3 flex gap-1 items-center">
+            <span class="w-1.5 h-1.5 rounded-full bg-brand-gray/25 animate-bounce" style="animation-delay:0ms"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-brand-gray/25 animate-bounce" style="animation-delay:150ms"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-brand-gray/25 animate-bounce" style="animation-delay:300ms"></span>
+          </div>`;
+        msgs.appendChild(wrap);
+        msgs.scrollTop = msgs.scrollHeight;
+        return wrap;
+      }
+
+      async function delay(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+      async function botTyping(text, opts) {
+        const t = typing();
+        await delay(800 + Math.random() * 400);
+        t.remove();
+        botMsg(text, opts);
+      }
+
+      async function startConversation() {
+        step = 1;
+        await delay(500);
+        await botTyping("Hey there! I'm your Pumpkn AI funding advisor. How can I help you today?", ["I need funding", "Check if I qualify", "Learn about products"]);
+      }
+
+      async function handleUserInput(text) {
+        const lower = text.toLowerCase();
+
+        if (step === 1) {
+          step = 2;
+          await botTyping("Great! Let me ask you a few quick questions. What sector is your business in?", ["Agriculture", "Food Processing", "Food Retail", "Livestock", "Other"]);
+        } else if (step === 2) {
+          userData.sector = text;
+          step = 3;
+          await botTyping("And how long has your business been trading?", ["Less than 1 year", "1-2 years", "3+ years"]);
+        } else if (step === 3) {
+          userData.trading = text;
+          step = 4;
+          await botTyping("What's your approximate monthly turnover?", ["Under R50K", "R50K - R85K", "R85K - R200K", "R200K+"]);
+        } else if (step === 4) {
+          userData.turnover = text;
+          step = 5;
+          await botTyping("How much funding are you looking for?", ["R30K - R100K", "R100K - R500K", "R500K - R1M", "R1M+"]);
+        } else if (step === 5) {
+          userData.amount = text;
+          step = 6;
+          await botTyping("What would the funding be used for?", ["Working capital", "Supplier payments", "Equipment", "Contract fulfillment"]);
+        } else if (step === 6) {
+          userData.purpose = text;
+          step = 7;
+
+          // Check qualification
+          const turnsOk = !userData.turnover.includes('Under');
+          const tradingOk = !userData.trading.includes('Less');
+
+          if (turnsOk && tradingOk) {
+            await botTyping("Based on what you've told me, you look like a strong candidate for Pumpkn funding!");
+            await delay(600);
+            await botTyping("To proceed, I'd need a few documents: <strong>Copy of ID</strong>, <strong>CIPC Certificate</strong>, <strong>6 months bank statements</strong>, and <strong>Proof of Address</strong>.");
+            await delay(600);
+            await botTyping("Would you like to start your application now? It takes under 10 minutes.", ["Start Application", "Talk to a human"]);
+          } else {
+            await botTyping("Thanks for the info! Based on your profile, I'd recommend chatting with our team directly — they can explore the best options for you.");
+            await delay(600);
+            await botTyping("Want me to connect you?", ["Chat on WhatsApp", "Maybe later"]);
+          }
+        } else if (step === 7) {
+          step = 8;
+          if (lower.includes('start') || lower.includes('application')) {
+            await botTyping("Excellent! Click below to begin your application:");
+            await delay(400);
+            botMsg('<a href="https://wa.me/27766489542" target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 bg-brand-accent text-white text-[13px] font-semibold rounded-full hover:bg-brand-accent/90 transition mt-1">Apply Now &rarr;</a>');
+          } else if (lower.includes('whatsapp') || lower.includes('human') || lower.includes('talk')) {
+            await botTyping("No problem! Here's a direct line to our team:");
+            await delay(400);
+            botMsg('<a href="https://wa.me/27766489542" target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 bg-brand-accent text-white text-[13px] font-semibold rounded-full hover:bg-brand-accent/90 transition mt-1">Chat on WhatsApp &rarr;</a>');
+          } else {
+            await botTyping("No worries! Feel free to come back anytime. We're here when you're ready.");
+          }
+        } else {
+          // Free text fallback
+          await botTyping("Thanks for your message! For detailed assistance, I'd recommend chatting with our team directly.", ["Chat on WhatsApp", "Start over"]);
+          if (lower.includes('start over')) {
+            msgs.innerHTML = '';
+            step = 0;
+            userData = {};
+            startConversation();
+          }
+        }
+      }
+
+      // Send on button click or Enter
+      function sendMessage() {
+        const text = input.value.trim();
+        if (!text) return;
+        input.value = '';
+        userMsg(text);
+        handleUserInput(text);
+      }
+
+      sendBtn.addEventListener('click', sendMessage);
+      input.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') sendMessage();
+      });
+
+      // Auto-open after 8 seconds if not opened
+      setTimeout(() => {
+        if (!isOpen) {
+          // Show a subtle nudge on the button
+          toggle.classList.add('animate-bounce');
+          setTimeout(() => toggle.classList.remove('animate-bounce'), 2000);
+        }
+      }, 8000);
+    })();
+
+    // ─── Animation 7: Newsletter modal flow ───
+    (function() {
+      const emailInput = document.getElementById('newsletter-email');
+      const submitBtn = document.getElementById('newsletter-submit');
+      const modal = document.getElementById('newsletter-modal');
+      const closeBtn = document.getElementById('nl-close');
+      const confirmBtn = document.getElementById('nl-confirm');
+      const doneBtn = document.getElementById('nl-done');
+      const stepDetails = document.getElementById('nl-step-details');
+      const stepSuccess = document.getElementById('nl-step-success');
+      if (!submitBtn || !modal) return;
+
+      function openModal() {
+        const email = emailInput.value.trim();
+        if (!email || !email.includes('@')) {
+          emailInput.style.borderColor = 'rgba(220,50,50,0.4)';
+          emailInput.focus();
+          setTimeout(() => { emailInput.style.borderColor = ''; }, 1500);
+          return;
+        }
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        stepDetails.classList.remove('hidden');
+        stepSuccess.classList.add('hidden');
+      }
+
+      function closeModal() {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+
+      submitBtn.addEventListener('click', openModal);
+      closeBtn.addEventListener('click', closeModal);
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+      });
+
+      confirmBtn.addEventListener('click', () => {
+        stepDetails.classList.add('hidden');
+        stepSuccess.classList.remove('hidden');
+        emailInput.value = '';
+      });
+
+      doneBtn.addEventListener('click', closeModal);
+    })();
+  </script>
+
+</body>
+</html>

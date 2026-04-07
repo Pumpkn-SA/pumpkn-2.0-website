@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pumpkn AI Finance Advisor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+  <link href="./images/6876191b7d74b10df8a39472_32x32.png" rel="shortcut icon" type="image/x-icon">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              primary:   '#5B8FA0',
+              dark:      '#2C3A40',
+              accent:    '#78B648',
+              light:     '#F2F6F5',
+              secondary: '#84ADA4',
+              gray:      '#58595B',
+              surface:   '#F7FAF9',
+            }
+          },
+          fontFamily: {
+            heading: ['Lora', 'Georgia', 'serif'],
+            body:    ['Lato', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root {
+      --primary:   #5B8FA0;
+      --dark:      #2C3A40;
+      --accent:    #78B648;
+      --light:     #F2F6F5;
+      --secondary: #84ADA4;
+      --gray:      #58595B;
+      --surface:   #F7FAF9;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; overflow: hidden; }
+    body { font-family: 'Lato', -apple-system, sans-serif; color: var(--gray); background: #fff; }
+    h1, h2, h3, h4 { font-family: 'Lora', Georgia, serif; color: var(--dark); }
+
+    /* ─── Chat Messages ─── */
+    .msg-bot {
+      background: var(--surface);
+      border: 1px solid rgba(91,143,160,0.1);
+      border-radius: 16px 16px 16px 4px;
+    }
+    .msg-user {
+      background: var(--dark);
+      color: #fff;
+      border-radius: 16px 16px 4px 16px;
+    }
+
+    /* ─── Typing Indicator ─── */
+    .typing-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--secondary);
+      animation: typingBounce 1.4s infinite;
+    }
+    .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+    .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes typingBounce {
+      0%, 60%, 100% { transform: translateY(0); }
+      30% { transform: translateY(-6px); }
+    }
+
+    /* ─── Right Panel Cards ─── */
+    .advisor-card {
+      background: #fff;
+      border-radius: 14px;
+      border-left: 4px solid var(--primary);
+      box-shadow: 0 2px 8px rgba(44,58,64,0.06), 0 1px 3px rgba(44,58,64,0.04);
+      transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+    }
+    .advisor-card:hover {
+      box-shadow: 0 6px 24px rgba(44,58,64,0.1), 0 2px 8px rgba(44,58,64,0.06);
+      transform: translateY(-2px);
+    }
+    .card-header {
+      cursor: pointer;
+      user-select: none;
+    }
+    .card-header .chevron {
+      transition: transform 0.3s ease;
+    }
+    .card-header.open .chevron {
+      transform: rotate(180deg);
+    }
+    .card-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+    }
+    .card-body.open {
+      max-height: 800px;
+    }
+
+    /* ─── Editable Fields ─── */
+    .field-input {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1.5px solid rgba(88,89,91,0.12);
+      border-radius: 8px;
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      color: var(--dark);
+      background: var(--surface);
+      transition: all 0.25s;
+    }
+    .field-input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(91,143,160,0.12);
+      outline: none;
+      background: #fff;
+    }
+    .field-input::placeholder {
+      color: #b0b5b8;
+      font-size: 13px;
+    }
+
+    /* ─── Document Upload ─── */
+    .doc-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border: 1.5px dashed rgba(88,89,91,0.15);
+      border-radius: 8px;
+      transition: all 0.25s;
+    }
+    .doc-row:hover {
+      border-color: var(--primary);
+      background: rgba(91,143,160,0.03);
+    }
+    .doc-row.uploaded {
+      border-style: solid;
+      border-color: var(--accent);
+      background: rgba(120,182,72,0.04);
+    }
+    .doc-checkbox {
+      width: 20px; height: 20px;
+      border-radius: 6px;
+      border: 2px solid rgba(88,89,91,0.2);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      transition: all 0.25s;
+    }
+    .doc-row.uploaded .doc-checkbox {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    /* ─── Quick Reply Buttons ─── */
+    .quick-reply {
+      padding: 8px 16px;
+      border: 1.5px solid rgba(91,143,160,0.25);
+      border-radius: 999px;
+      background: #fff;
+      color: var(--dark);
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s;
+    }
+    .quick-reply:hover {
+      background: var(--dark);
+      color: #fff;
+      border-color: var(--dark);
+    }
+
+    /* ─── Chat Input ─── */
+    .chat-input-wrap {
+      border: 1.5px solid rgba(88,89,91,0.12);
+      border-radius: 16px;
+      background: #fff;
+      transition: all 0.25s;
+    }
+    .chat-input-wrap:focus-within {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(91,143,160,0.1);
+    }
+    .chat-input {
+      border: none;
+      outline: none;
+      width: 100%;
+      padding: 14px 16px;
+      font-family: 'Lato', sans-serif;
+      font-size: 16px;
+      color: var(--dark);
+      background: transparent;
+      resize: none;
+    }
+    .chat-input::placeholder {
+      color: #aab;
+    }
+
+    /* ─── Mobile Tabs ─── */
+    .mobile-tab {
+      padding: 10px 20px;
+      font-family: 'Lato', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.25s;
+      color: var(--gray);
+      background: transparent;
+      border: none;
+    }
+    .mobile-tab.active {
+      background: var(--dark);
+      color: #fff;
+    }
+
+    /* ─── Scrollbar ─── */
+    .custom-scroll::-webkit-scrollbar { width: 5px; }
+    .custom-scroll::-webkit-scrollbar-track { background: transparent; }
+    .custom-scroll::-webkit-scrollbar-thumb { background: rgba(88,89,91,0.15); border-radius: 999px; }
+    .custom-scroll::-webkit-scrollbar-thumb:hover { background: rgba(88,89,91,0.3); }
+
+    /* ─── Executive Summary ─── */
+    .exec-summary {
+      min-height: 80px;
+      padding: 12px;
+      border: 1.5px solid rgba(88,89,91,0.1);
+      border-radius: 8px;
+      font-family: 'Lato', sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--dark);
+      background: var(--surface);
+      outline: none;
+      transition: border-color 0.25s;
+    }
+    .exec-summary:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(91,143,160,0.12);
+      background: #fff;
+    }
+    .exec-summary:empty::before {
+      content: 'Your executive summary will auto-generate as you fill in your details...';
+      color: #b0b5b8;
+      font-style: italic;
+    }
+
+    /* ─── Two-column field grid ─── */
+    .field-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .field-grid .field-full {
+      grid-column: 1 / -1;
+    }
+    @media (max-width: 900px) {
+      .field-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body class="flex flex-col h-screen">
+
+  <!-- ─── Navbar ─── -->
+  <nav class="flex items-center justify-between px-6 py-3 border-b border-gray-100 bg-white flex-shrink-0">
+    <div class="flex items-center gap-4">
+      <a href="/v2" class="flex items-center gap-2 text-brand-gray hover:text-brand-dark transition-colors text-sm font-bold">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 9H3m0 0l5-5M3 9l5 5"/></svg>
+        Back
+      </a>
+      <div class="w-px h-6 bg-gray-200"></div>
+      <img src="./images/68af30aeb4914acc8c36dec8_cropped_pumpkn_logo_2-removebg-preview.png" alt="Pumpkn" class="h-9">
+    </div>
+    <div class="flex items-center gap-3">
+      <span class="text-sm font-body font-bold text-brand-dark hidden sm:block">AI Finance Advisor</span>
+      <button onclick="clearAll()" class="text-xs font-bold text-brand-gray hover:text-red-500 transition-colors px-3 py-1.5 rounded-full border border-gray-200 hover:border-red-200">
+        Clear &amp; Reset
+      </button>
+    </div>
+  </nav>
+
+  <!-- ─── Mobile Tabs (hidden on desktop) ─── -->
+  <div class="flex items-center justify-center gap-2 p-2 bg-white border-b border-gray-100 md:hidden flex-shrink-0">
+    <button class="mobile-tab active" onclick="switchTab('chat')" id="tab-chat">Chat</button>
+    <button class="mobile-tab" onclick="switchTab('panel')" id="tab-panel">Application</button>
+  </div>
+
+  <!-- ─── Main Content ─── -->
+  <div class="flex flex-1 overflow-hidden">
+
+    <!-- ─── LEFT: Chat Panel ─── -->
+    <div id="panel-chat" class="flex flex-col w-full md:w-1/2 lg:w-[45%] border-r border-gray-100 bg-white">
+
+      <!-- Messages -->
+      <div id="chat-messages" class="flex-1 overflow-y-auto custom-scroll px-5 py-6 space-y-4">
+        <!-- Populated by JS -->
+      </div>
+
+      <!-- Chat Input -->
+      <div class="px-5 pb-5 pt-2 flex-shrink-0">
+        <div class="chat-input-wrap flex items-end">
+          <textarea
+            id="chat-input"
+            class="chat-input"
+            rows="1"
+            placeholder="Type your message..."
+            onkeydown="handleInputKey(event)"
+            oninput="autoGrow(this)"
+          ></textarea>
+          <div class="flex items-center gap-1 px-3 pb-3">
+            <label class="cursor-pointer text-brand-gray hover:text-brand-primary transition-colors" title="Upload file">
+              <input type="file" class="hidden" onchange="handleFileUpload(event)" multiple>
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V6l-4-4z"/><path d="M14 2v4h4"/><path d="M10 13V9"/><path d="M8 11l2-2 2 2"/></svg>
+            </label>
+            <button onclick="sendMessage()" class="w-9 h-9 rounded-full bg-brand-dark hover:bg-brand-primary text-white flex items-center justify-center transition-colors flex-shrink-0">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8l12-6-4 14-4-6-4-2z"/><path d="M10 2l-4 6"/></svg>
+            </button>
+          </div>
+        </div>
+        <p class="text-[11px] text-center text-gray-400 mt-2 font-body">Pumpkn AI Advisor — your data stays private and secure</p>
+      </div>
+
+    </div>
+
+    <!-- ─── RIGHT: Context Panel ─── -->
+    <div id="panel-context" class="hidden md:flex flex-col w-full md:w-1/2 lg:w-[55%] bg-brand-light overflow-y-auto custom-scroll">
+      <div class="p-5 space-y-3">
+
+        <!-- Executive Summary Card -->
+        <div class="advisor-card">
+          <div class="card-header open flex items-center justify-between px-5 py-3.5" onclick="toggleCard(this)">
+            <div class="flex items-center gap-2.5">
+              <svg width="18" height="18" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V6l-2-4z"/><path d="M14 2v4h2"/><path d="M6 9h8M6 13h4"/></svg>
+              <h3 class="text-[15px] font-heading font-semibold text-brand-dark">Executive Summary</h3>
+            </div>
+            <svg class="chevron" width="16" height="16" fill="none" stroke="var(--gray)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l4 4 4-4"/></svg>
+          </div>
+          <div class="card-body open px-5 pb-4">
+            <div id="exec-summary" class="exec-summary" contenteditable="true" oninput="saveState()"></div>
+          </div>
+        </div>
+
+        <!-- User Profile Card -->
+        <div class="advisor-card">
+          <div class="card-header flex items-center justify-between px-5 py-3.5" onclick="toggleCard(this)">
+            <div class="flex items-center gap-2.5">
+              <svg width="18" height="18" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="6" r="4"/><path d="M1 18v-1a6 6 0 0112 0v1"/></svg>
+              <h3 class="text-[15px] font-heading font-semibold text-brand-dark">User Profile</h3>
+              <span id="badge-user" class="text-[11px] font-bold text-brand-primary bg-brand-light px-2 py-0.5 rounded-full">0/4</span>
+            </div>
+            <svg class="chevron" width="16" height="16" fill="none" stroke="var(--gray)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l4 4 4-4"/></svg>
+          </div>
+          <div class="card-body px-5 pb-4">
+            <div class="field-grid pt-1">
+              <div><label class="text-[11px] font-bold text-brand-gray uppercase tracking-wide">Full Name</label><input type="text" class="field-input mt-1" data-category="user" data-field="fullName" placeholder="e.g. Thabo Molefe" oninput="onFieldInput(this)"></div>
+              <div><label class="text-[11px] font-bold text-brand-gray uppercase tracking-wide">Email</label><input type="email" class="field-input mt-1" data-category="user" data-field="email" placeholder="e.g. thabo@company.co.za" oninput="onFieldInput(this)"></div>
+              <div><label class="text-[11px] font-bold text-brand-gray uppercase tracking-wide">Phone Number</label><input type="tel" class="field-input mt-1" data-category="user" data-field="phone" placeholder="e.g. 072 123 4567" oninput="onFieldInput(this)"></div>
+              <div><label class="text-[11px] font-bold text-brand-gray uppercase tracking-wide">ID / Passport Number</label><input type="text" class="field-input mt-1" data-category="user" data-field="idNumber" placeholder="e.g. 9001015009088" oninput="onFieldInput(this)"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Business Card -->
+        <div class="advisor-card">
+          <div class="card-header flex items-center justify-between px-5 py-3.5" onclick="toggleCard(this)">
+            <div class="flex items-center gap-2.5">
+              <svg width="18" height="18" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="16" height="12" rx="2"/><path d="M6 3V1h6v2"/></svg>
+              <h3 class="text-[15px] font-heading font-semibold text-brand-dark">Business Details</h3>
+              <span id="badge-business" class="text-[11px] font-bold text-brand-primary bg-brand-light px-2 py-0.5 rounded-full">0/5</span>
+            </div>
+            <svg class="chevron" width="16" height="16" fill="none" stroke="var(--gray)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l4 4 4-4"/></svg>
+          </div>
+          <div class="card-body px-5 pb-4">
+            <div class="field-grid pt-1">
+              <div><label class="text-[11px] font-bold text-brand-gray uppercase tracking-wide">Business Name</label><input type="text" class="field-input mt-1" data-category="business" data-field="name" placeholder="e.g. Molefe Agri Holdings" oninput="onFieldInput(this)"></div>
+              <div><label class="text-[11px] font-bold text-brand-gray uppercase tracking-wide">CIPC Number</label><input type="text" class="field-input mt-1" data-category="business" data-field="cipc" placeholder="e.g. 2020/123456/07" oninput="onFieldInput(this)"></div>
+              <div><label class="text-[11px] font-bold text-brand-gray uppercase tracking-wide">Sector</label><input type="text" class="field-input mt-1" data-category="business" data-field="sector" placeholder="e.g. Fresh Produce, Poultry" oninput="onFieldInput(this)"></div>
+              <div><label class="text-[11px] font-bold text-brand-gray uppercase tracking-wide">Primary Markets</label><input type="text" class="field-input mt-1" data-category="business" data-field="markets" placeholder="e.g. Retailers, Informal traders" oninput="onFieldInput(this)"></div>
+              <div class="field-full"><label class="text-[11px] font-bold text-brand-gray uppercase tracking-wide">Business Description</label><textarea class="field-input mt-1" rows="2" data-category="business" data-field="description" placeholder="Brief description of what your business does..." oninput="onFieldInput(this)"></textarea></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Business Summary Card -->
+        <div class="advisor-card">
+          <div class="card-header flex items-center justify-between px-5 py-3.5" onclick="toggleCard(this)">
+            <div class="flex items-center gap-2.5">
+              <svg width="18" height="18" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16H2V2"/><path d="M5 12l4-4 3 3 4-5"/></svg>
+              <h3 class="text-[15px] font-heading font-semibold text-brand-dark">Business Summary</h3>
+              <span id="badge-summary" class="text-[11px] font-bold text-brand-primary bg-brand-light px-2 py-0.5 rounded-full">0/5</span>
+            </div>
+            <svg class="chevron" width="16" height="16" fill="none" stroke="var(--gray)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l4 4 4-4"/></svg>
+          </div>
+          <div class="card-body px-5 pb-4">
+            <div class="field-grid pt-1">
+              <div><label class="text-[11px] font-bold text-brand-gray uppercase tracking-wide">Monthly Turnover</label><input type="text" class="field-input mt-1" data-category="summary" data-field="turnover" placeholder="e.g. R 250,000" oninput="onFieldInput(this)"></div>
+              <div><label class="text-[11px] font-bold text-brand-gray uppercase tracking-wide">Number of Employees</label><input type="text" class="field-input mt-1" data-category="summary" data-field="employees" placeholder="e.g. 12" oninput="onFieldInput(this)"></div>
+              <div class="field-full"><label class="text-[11px] font-bold text-brand-gray uppercase tracking-wide">Top 3 Revenue Sources</label><input type="text" class="field-input mt-1" data-category="summary" data-field="revenueSources" placeholder="e.g. Wholesale, Direct sales, Contracts" oninput="onFieldInput(this)"></div>
+              <div class="field-full"><label class="text-[11px] font-bold text-brand-gray uppercase tracking-wide">Top 3 Cost Drivers</label><input type="text" class="field-input mt-1" data-category="summary" data-field="costDrivers" placeholder="e.g. Raw materials, Labour, Transport" oninput="onFieldInput(this)"></div>
+              <div class="field-full"><label class="text-[11px] font-bold text-brand-gray uppercase tracking-wide">Top 3 Clients</label><input type="text" class="field-input mt-1" data-category="summary" data-field="topClients" placeholder="e.g. Shoprite, Spar, Local market" oninput="onFieldInput(this)"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Funding Requirements Card -->
+        <div class="advisor-card">
+          <div class="card-header flex items-center justify-between px-5 py-3.5" onclick="toggleCard(this)">
+            <div class="flex items-center gap-2.5">
+              <svg width="18" height="18" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="7"/><path d="M9 5v4l3 2"/></svg>
+              <h3 class="text-[15px] font-heading font-semibold text-brand-dark">Funding Requirements</h3>
+              <span id="badge-funding" class="text-[11px] font-bold text-brand-primary bg-brand-light px-2 py-0.5 rounded-full">0/4</span>
+            </div>
+            <svg class="chevron" width="16" height="16" fill="none" stroke="var(--gray)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l4 4 4-4"/></svg>
+          </div>
+          <div class="card-body px-5 pb-4">
+            <div class="field-grid pt-1">
+              <div><label class="text-[11px] font-bold text-brand-gray uppercase tracking-wide">Amount Required (ZAR)</label><input type="text" class="field-input mt-1" data-category="funding" data-field="amount" placeholder="e.g. R 500,000" oninput="onFieldInput(this)"></div>
+              <div><label class="text-[11px] font-bold text-brand-gray uppercase tracking-wide">Loan Term</label><input type="text" class="field-input mt-1" data-category="funding" data-field="term" placeholder="e.g. 12 months" oninput="onFieldInput(this)"></div>
+              <div class="field-full"><label class="text-[11px] font-bold text-brand-gray uppercase tracking-wide">Purpose of Funding</label><textarea class="field-input mt-1" rows="2" data-category="funding" data-field="purpose" placeholder="e.g. Purchase cold storage equipment..." oninput="onFieldInput(this)"></textarea></div>
+              <div class="field-full"><label class="text-[11px] font-bold text-brand-gray uppercase tracking-wide">Outstanding Loans</label><input type="text" class="field-input mt-1" data-category="funding" data-field="outstandingLoans" placeholder="e.g. None / R 50,000 with FNB" oninput="onFieldInput(this)"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Document Checklist Card -->
+        <div class="advisor-card">
+          <div class="card-header flex items-center justify-between px-5 py-3.5" onclick="toggleCard(this)">
+            <div class="flex items-center gap-2.5">
+              <svg width="18" height="18" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2H4a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7l-5-5z"/><path d="M9 2v5h5"/><path d="M7 13l2 2 4-4"/></svg>
+              <h3 class="text-[15px] font-heading font-semibold text-brand-dark">Documents</h3>
+              <span id="badge-docs" class="text-[11px] font-bold text-brand-primary bg-brand-light px-2 py-0.5 rounded-full">0/6</span>
+            </div>
+            <svg class="chevron" width="16" height="16" fill="none" stroke="var(--gray)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l4 4 4-4"/></svg>
+          </div>
+          <div class="card-body px-5 pb-4">
+            <div class="space-y-2 pt-1" id="doc-checklist">
+              <!-- Rendered by JS -->
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+<script>
+// ─── State ───
+const STORAGE_KEY = 'pumpkn-advisor-state';
+
+const DOCUMENTS = [
+  { id: 'companyReg',     label: 'Company Registration Number' },
+  { id: 'directorId',     label: "Applying Director's ID Number" },
+  { id: 'sarsTax',        label: 'SARS Tax Compliance PIN' },
+  { id: 'bankStatements', label: '6 Months Bank Statements' },
+  { id: 'addressDir',     label: 'Proof of Address — Director' },
+  { id: 'addressBiz',     label: 'Proof of Address — Business' },
+];
+
+let state = loadState();
+
+function defaultState() {
+  return {
+    user:     { fullName: '', email: '', phone: '', idNumber: '' },
+    business: { name: '', cipc: '', sector: '', markets: '', description: '' },
+    summary:  { turnover: '', revenueSources: '', costDrivers: '', employees: '', topClients: '' },
+    funding:  { amount: '', term: '', purpose: '', outstandingLoans: '' },
+    documents: {},
+    execSummary: '',
+    messages: [],
+    step: 0,
+  };
+}
+
+function loadState() {
+  try {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved) {
+      const parsed = JSON.parse(saved);
+      return { ...defaultState(), ...parsed };
+    }
+  } catch (e) { console.warn('State load failed:', e); }
+  return defaultState();
+}
+
+function saveState() {
+  state.execSummary = document.getElementById('exec-summary').innerHTML;
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  updateBadges();
+}
+
+// ─── Badge Updates ───
+function updateBadges() {
+  for (const cat of ['user', 'business', 'summary', 'funding']) {
+    const filled = Object.values(state[cat]).filter(v => v && v.trim()).length;
+    const total = Object.keys(state[cat]).length;
+    const badge = document.getElementById('badge-' + cat);
+    if (badge) {
+      badge.textContent = filled + '/' + total;
+      badge.className = filled === total
+        ? 'text-[11px] font-bold text-white bg-brand-accent px-2 py-0.5 rounded-full'
+        : 'text-[11px] font-bold text-brand-primary bg-brand-light px-2 py-0.5 rounded-full';
+    }
+  }
+
+  const docsUploaded = DOCUMENTS.filter(d => state.documents[d.id]).length;
+  const docBadge = document.getElementById('badge-docs');
+  if (docBadge) {
+    docBadge.textContent = docsUploaded + '/' + DOCUMENTS.length;
+    docBadge.className = docsUploaded === DOCUMENTS.length
+      ? 'text-[11px] font-bold text-white bg-brand-accent px-2 py-0.5 rounded-full'
+      : 'text-[11px] font-bold text-brand-primary bg-brand-light px-2 py-0.5 rounded-full';
+  }
+}
+
+// ─── Field Input Handler ───
+function onFieldInput(el) {
+  const cat = el.dataset.category;
+  const field = el.dataset.field;
+  state[cat][field] = el.value;
+  saveState();
+}
+
+// ─── Card Accordion ───
+function toggleCard(header) {
+  header.classList.toggle('open');
+  const body = header.nextElementSibling;
+  body.classList.toggle('open');
+}
+
+// ─── Conversation Flow ───
+// Each step defines the bot message, optional quick replies, and which fields get updated
+const CONVERSATION_STEPS = [
+  {
+    // Step 0: Greeting
+    bot: "Hi! I'm <strong>Pumpkn</strong>, your AI Finance Advisor. I'm here to help you access the right funding for your business. Let's get to know each other first — it'll only take a few minutes.",
+    quickReplies: ["Let's get started", "Tell me more first"],
+  },
+  {
+    // Step 1: Name
+    bot: "Great! First things first — what's your <strong>full name</strong>?",
+    field: { category: 'user', field: 'fullName' },
+  },
+  {
+    // Step 2: Surname confirmation + email
+    botFn: () => `Nice to meet you, <strong>${state.user.fullName || 'there'}</strong>! What's the best <strong>email address</strong> to reach you on?`,
+    field: { category: 'user', field: 'email' },
+  },
+  {
+    // Step 3: Phone
+    bot: "And a <strong>phone number</strong> where we can reach you?",
+    field: { category: 'user', field: 'phone' },
+  },
+  {
+    // Step 4: ID
+    bot: "Last personal detail — your <strong>SA ID or passport number</strong>? This is required for compliance checks.",
+    field: { category: 'user', field: 'idNumber' },
+  },
+  {
+    // Step 5: General business question
+    bot: "Perfect, profile details captured. Now tell me about your business — <strong>what does your company do</strong>, and what's the <strong>name</strong>? Just describe it naturally, I'll pick up the details.",
+    field: { category: 'business', field: 'description' },
+  },
+  {
+    // Step 6: Summary + interest, then sector
+    botFn: () => {
+      const desc = state.business.description || 'your business';
+      return `That sounds really interesting! There's a lot of potential there. Let me understand the structure better — what <strong>sector</strong> would you say you're in, and who are your <strong>primary customers</strong>? (e.g. retailers, wholesalers, informal traders)`;
+    },
+    field: { category: 'business', field: 'sector' },
+  },
+  {
+    // Step 7: Turnover + employees
+    bot: "Good picture forming. What's your <strong>average monthly turnover</strong> roughly? And how many <strong>permanent employees</strong> do you have?",
+    field: { category: 'summary', field: 'turnover' },
+  },
+  {
+    // Step 8: Revenue + costs
+    bot: "What are your <strong>top 3 sources of revenue</strong>? And on the flip side, your <strong>top 3 cost drivers</strong>?",
+    field: { category: 'summary', field: 'revenueSources' },
+  },
+  {
+    // Step 9: Key clients
+    bot: "Who are your <strong>top 3 clients</strong> right now? Names and roughly how much business they bring if you can.",
+    field: { category: 'summary', field: 'topClients' },
+  },
+  {
+    // Step 10: Funding amount + purpose
+    bot: "Now the important part — how much <strong>funding</strong> are you looking for, and what would you <strong>use it for</strong>?",
+    field: { category: 'funding', field: 'amount' },
+  },
+  {
+    // Step 11: Loan term
+    bot: "Over what <strong>period</strong> would you like to repay? (e.g. 3 months, 6 months, 12 months)",
+    field: { category: 'funding', field: 'term' },
+  },
+  {
+    // Step 12: Outstanding loans
+    bot: "Last funding question — do you currently have any <strong>outstanding business loans</strong>?",
+    field: { category: 'funding', field: 'outstandingLoans' },
+  },
+  {
+    // Step 13: Documents intro
+    botFn: () => {
+      return `Brilliant — I've got a clear picture of your funding needs now. The last step is <strong>documents</strong>. You'll need to upload these 6 items to complete your application:<br><br>` +
+        DOCUMENTS.map((d, i) => `${i + 1}. ${d.label}`).join('<br>') +
+        `<br><br>You can upload them now using the paperclip button, or head to the <strong>Documents card</strong> on the right panel. Take your time — you can always come back to finish later.`;
+    },
+    quickReplies: ["I'll upload now", "I'll do it later"],
+  },
+  {
+    // Step 14: Wrap up
+    bot: "No problem at all! Your progress is saved automatically. You can close this page and come back anytime — everything will be right here waiting for you. If you need anything else, just ask!",
+  },
+];
+
+function getBotMessage(step) {
+  const s = CONVERSATION_STEPS[step];
+  if (!s) return null;
+  if (s.botFn) return s.botFn();
+  return s.bot;
+}
+
+function processUserInput(text) {
+  const step = state.step;
+  const stepDef = CONVERSATION_STEPS[step];
+
+  // Store user input into relevant field if defined
+  if (stepDef && stepDef.field) {
+    const { category, field } = stepDef.field;
+
+    // For step 5 (business description), also try to extract business name
+    if (step === 5) {
+      state.business.description = text;
+      // Try to extract business name from response
+      const nameMatch = text.match(/(?:called|named|name is|company is|business is)\s+["']?([^"',.\n]+)/i);
+      if (nameMatch) {
+        state.business.name = nameMatch[1].trim();
+      }
+    }
+    // For step 6 (sector + markets), split if possible
+    else if (step === 6) {
+      state.business.sector = text;
+      // Try to extract markets if mentioned
+      const parts = text.split(/,\s*and\s*|,\s*/);
+      if (parts.length > 1) {
+        state.business.sector = parts[0].trim();
+        state.business.markets = parts.slice(1).join(', ').trim();
+      }
+    }
+    // For step 7 (turnover + employees), try to split
+    else if (step === 7) {
+      state.summary.turnover = text;
+      const empMatch = text.match(/(\d+)\s*(?:employees|people|staff|workers)/i);
+      if (empMatch) {
+        state.summary.employees = empMatch[1];
+      }
+    }
+    // For step 8 (revenue + costs), try to split
+    else if (step === 8) {
+      state.summary.revenueSources = text;
+      // If user mentions cost drivers too
+      const costMatch = text.match(/(?:cost|expense|spend)[s]?[:\s]+(.+)/i);
+      if (costMatch) {
+        state.summary.costDrivers = costMatch[1].trim();
+      }
+    }
+    // For step 10 (amount + purpose), try to split
+    else if (step === 10) {
+      state.funding.amount = text;
+      const purposeMatch = text.match(/(?:for|to|use it for|towards)\s+(.+)/i);
+      if (purposeMatch) {
+        state.funding.purpose = purposeMatch[1].trim();
+      }
+    }
+    else {
+      state[category][field] = text;
+    }
+
+    saveState();
+    syncFieldsToUI();
+  }
+
+  // Advance step
+  state.step++;
+  saveState();
+
+  // Show next bot message
+  const nextMsg = getBotMessage(state.step);
+  if (nextMsg) {
+    showTyping();
+    setTimeout(() => {
+      hideTyping();
+      addMessage(nextMsg, 'bot');
+
+      // Show quick replies if defined
+      const nextStep = CONVERSATION_STEPS[state.step];
+      if (nextStep && nextStep.quickReplies) {
+        showQuickReplies(nextStep.quickReplies);
+      }
+    }, 1000 + Math.random() * 500);
+  }
+}
+
+function syncFieldsToUI() {
+  document.querySelectorAll('.field-input').forEach(el => {
+    const cat = el.dataset.category;
+    const field = el.dataset.field;
+    if (cat && field && state[cat] && state[cat][field]) {
+      el.value = state[cat][field];
+    }
+  });
+  updateBadges();
+}
+
+// ─── Chat ───
+const BOT_AVATAR = `<div class="w-8 h-8 rounded-full bg-brand-dark flex items-center justify-center flex-shrink-0 mt-1">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 1 4 4v2a4 4 0 0 1-8 0V6a4 4 0 0 1 4-4z"/><path d="M16 14H8a4 4 0 0 0-4 4v2h16v-2a4 4 0 0 0-4-4z"/></svg>
+</div>`;
+
+function addMessage(text, sender, skipSave) {
+  const container = document.getElementById('chat-messages');
+
+  if (sender === 'user') {
+    const div = document.createElement('div');
+    div.className = 'flex justify-end';
+    div.innerHTML = `<div class="msg-user px-4 py-3 max-w-[85%]"><p class="text-[15px] leading-relaxed">${escapeHtml(text)}</p></div>`;
+    container.appendChild(div);
+  } else {
+    const div = document.createElement('div');
+    div.className = 'flex gap-3 items-start';
+    div.innerHTML = `${BOT_AVATAR}<div class="msg-bot px-4 py-3 max-w-[85%]"><p class="text-[15px] leading-relaxed text-brand-dark">${text}</p></div>`;
+    container.appendChild(div);
+  }
+
+  if (!skipSave) {
+    state.messages.push({ text, sender, ts: Date.now() });
+    saveState();
+  }
+
+  container.scrollTop = container.scrollHeight;
+}
+
+function showQuickReplies(replies) {
+  const container = document.getElementById('chat-messages');
+  const div = document.createElement('div');
+  div.className = 'quick-replies-wrap flex flex-wrap gap-2 pl-11';
+  div.innerHTML = replies.map(r => `<button class="quick-reply" onclick="sendQuickReply(this)">${r}</button>`).join('');
+  container.appendChild(div);
+  container.scrollTop = container.scrollHeight;
+}
+
+function showTyping() {
+  const container = document.getElementById('chat-messages');
+  const div = document.createElement('div');
+  div.id = 'typing-indicator';
+  div.className = 'flex gap-3 items-start';
+  div.innerHTML = `${BOT_AVATAR}<div class="msg-bot px-4 py-3 flex gap-1.5 items-center"><div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div></div>`;
+  container.appendChild(div);
+  container.scrollTop = container.scrollHeight;
+}
+
+function hideTyping() {
+  const el = document.getElementById('typing-indicator');
+  if (el) el.remove();
+}
+
+function sendMessage() {
+  const input = document.getElementById('chat-input');
+  const text = input.value.trim();
+  if (!text) return;
+
+  // Remove any quick replies
+  document.querySelectorAll('.quick-replies-wrap').forEach(el => el.remove());
+
+  addMessage(text, 'user');
+  input.value = '';
+  input.style.height = 'auto';
+
+  processUserInput(text);
+}
+
+function sendQuickReply(btn) {
+  const text = btn.textContent;
+  document.querySelectorAll('.quick-replies-wrap').forEach(el => el.remove());
+
+  addMessage(text, 'user');
+  processUserInput(text);
+}
+
+function handleInputKey(e) {
+  if (e.key === 'Enter' && !e.shiftKey) {
+    e.preventDefault();
+    sendMessage();
+  }
+}
+
+function autoGrow(el) {
+  el.style.height = 'auto';
+  el.style.height = Math.min(el.scrollHeight, 120) + 'px';
+}
+
+function handleFileUpload(e) {
+  const files = e.target.files;
+  if (!files.length) return;
+
+  for (const file of files) {
+    addMessage(`Uploaded: ${file.name} (${formatFileSize(file.size)})`, 'user');
+
+    const matched = matchDocumentType(file.name);
+    if (matched) {
+      state.documents[matched] = { name: file.name, size: file.size, ts: Date.now() };
+      saveState();
+      renderDocChecklist();
+
+      showTyping();
+      setTimeout(() => {
+        hideTyping();
+        const docLabel = DOCUMENTS.find(d => d.id === matched)?.label;
+        addMessage(`Got it! I've added "${file.name}" to your <strong>${docLabel}</strong>.`, 'bot');
+      }, 800);
+    } else {
+      showTyping();
+      setTimeout(() => {
+        hideTyping();
+        addMessage(`Thanks for uploading "${file.name}". You can assign it to a document type in the <strong>Documents</strong> card on the right panel.`, 'bot');
+      }, 800);
+    }
+  }
+  e.target.value = '';
+}
+
+function matchDocumentType(filename) {
+  const lower = filename.toLowerCase();
+  if (lower.includes('registration') || lower.includes('cipc') || lower.includes('company reg')) return 'companyReg';
+  if (lower.includes('id') || lower.includes('passport') || lower.includes('identity')) return 'directorId';
+  if (lower.includes('sars') || lower.includes('tax') || lower.includes('compliance')) return 'sarsTax';
+  if (lower.includes('bank') || lower.includes('statement')) return 'bankStatements';
+  if (lower.includes('address') && lower.includes('dir')) return 'addressDir';
+  if (lower.includes('address') && lower.includes('biz')) return 'addressBiz';
+  return null;
+}
+
+// ─── Document Checklist ───
+function renderDocChecklist() {
+  const container = document.getElementById('doc-checklist');
+  container.innerHTML = DOCUMENTS.map(doc => {
+    const uploaded = state.documents[doc.id];
+    return `
+      <div class="doc-row ${uploaded ? 'uploaded' : ''}">
+        <div class="doc-checkbox">
+          ${uploaded ? '<svg width="14" height="14" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l3 3 5-6"/></svg>' : ''}
+        </div>
+        <div class="flex-1 min-w-0">
+          <p class="text-[13px] font-bold text-brand-dark">${doc.label}</p>
+          ${uploaded
+            ? `<p class="text-[11px] text-brand-accent truncate">${uploaded.name}</p>`
+            : `<p class="text-[11px] text-gray-400">Not uploaded</p>`
+          }
+        </div>
+        ${uploaded
+          ? `<button onclick="removeDocument('${doc.id}')" class="text-gray-400 hover:text-red-500 transition-colors flex-shrink-0" title="Remove">
+               <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 2l10 10M12 2L2 12"/></svg>
+             </button>`
+          : `<label class="cursor-pointer text-brand-primary hover:text-brand-dark transition-colors flex-shrink-0" title="Upload">
+               <input type="file" class="hidden" onchange="uploadToDoc('${doc.id}', event)">
+               <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 12V4M4 8l4-4 4 4"/></svg>
+             </label>`
+        }
+      </div>`;
+  }).join('');
+}
+
+function uploadToDoc(docId, e) {
+  const file = e.target.files[0];
+  if (!file) return;
+  state.documents[docId] = { name: file.name, size: file.size, ts: Date.now() };
+  saveState();
+  renderDocChecklist();
+}
+
+function removeDocument(docId) {
+  delete state.documents[docId];
+  saveState();
+  renderDocChecklist();
+}
+
+// ─── Mobile Tabs ───
+function switchTab(tab) {
+  const chatPanel = document.getElementById('panel-chat');
+  const contextPanel = document.getElementById('panel-context');
+  const tabChat = document.getElementById('tab-chat');
+  const tabPanel = document.getElementById('tab-panel');
+
+  if (tab === 'chat') {
+    chatPanel.classList.remove('hidden');
+    chatPanel.classList.add('flex');
+    contextPanel.classList.add('hidden');
+    contextPanel.classList.remove('flex');
+    tabChat.classList.add('active');
+    tabPanel.classList.remove('active');
+  } else {
+    chatPanel.classList.add('hidden');
+    chatPanel.classList.remove('flex');
+    contextPanel.classList.remove('hidden');
+    contextPanel.classList.add('flex');
+    tabPanel.classList.add('active');
+    tabChat.classList.remove('active');
+  }
+}
+
+// ─── Clear All ───
+function clearAll() {
+  if (!confirm('This will reset your entire application. Are you sure?')) return;
+  localStorage.removeItem(STORAGE_KEY);
+  state = defaultState();
+
+  // Clear all field inputs
+  document.querySelectorAll('.field-input').forEach(el => el.value = '');
+  document.getElementById('exec-summary').innerHTML = '';
+
+  renderDocChecklist();
+  updateBadges();
+  initChat();
+}
+
+// ─── Utilities ───
+function escapeHtml(text) {
+  const div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
+}
+
+function formatFileSize(bytes) {
+  if (bytes < 1024) return bytes + ' B';
+  if (bytes < 1048576) return (bytes / 1024).toFixed(1) + ' KB';
+  return (bytes / 1048576).toFixed(1) + ' MB';
+}
+
+// ─── Init Chat ───
+function initChat() {
+  const container = document.getElementById('chat-messages');
+  container.innerHTML = '';
+
+  if (state.messages.length > 0) {
+    // Replay saved messages
+    for (const msg of state.messages) {
+      addMessage(msg.text, msg.sender, true);
+    }
+    // Show quick replies for current step if applicable
+    const currentStep = CONVERSATION_STEPS[state.step];
+    if (currentStep && currentStep.quickReplies) {
+      showQuickReplies(currentStep.quickReplies);
+    }
+  } else {
+    // Fresh start: show greeting
+    const greeting = getBotMessage(0);
+    addMessage(greeting, 'bot');
+    showQuickReplies(CONVERSATION_STEPS[0].quickReplies);
+  }
+}
+
+// ─── Restore UI ───
+function restoreUI() {
+  // Restore field values
+  document.querySelectorAll('.field-input').forEach(el => {
+    const cat = el.dataset.category;
+    const field = el.dataset.field;
+    if (cat && field && state[cat] && state[cat][field]) {
+      el.value = state[cat][field];
+    }
+  });
+
+  // Restore executive summary
+  const exec = document.getElementById('exec-summary');
+  if (state.execSummary) exec.innerHTML = state.execSummary;
+
+  renderDocChecklist();
+  updateBadges();
+  initChat();
+}
+
+// ─── Init ───
+document.addEventListener('DOMContentLoaded', () => {
+  restoreUI();
+});
+</script>
+
+</body>
+</html>
